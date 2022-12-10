@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FoodManagement</string>
+    <string name="button1">新規登録</string>
+    <string name="button2">ログイン</string>
+
+    <string name="user_passwd">パスワード</string>
+    <string name="user_mail">メールアドレス</string>
+
+    <string name="username_txt">ユーザネーム</string>
+</resources>
