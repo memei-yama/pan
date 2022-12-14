@@ -16,10 +16,15 @@ public class Home extends AppCompatActivity {
 
         //ボタンの設定
         //Button food_register = findViewById(R.id.food_register);
+        //任意の食品を選択したとき
+
         //Button food_search = findViewById(R.id.food_search);
         //Button food_sort = findViewById(R.id.food_sort);
         //Button favorite = findViewById(R.id.favorite);
         //Button delete_mode = findViewById(R.id.delete_mode);
+
+        //テスト
+        //Button button_new = findViewById(R.id.button1);
 
     }
 }
