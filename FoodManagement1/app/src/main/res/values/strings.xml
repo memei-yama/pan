@@ -5,6 +5,9 @@
 
     <string name="user_passwd">パスワード</string>
     <string name="user_mail">メールアドレス</string>
-
+    <string name="user_address">住所</string>
     <string name="username_txt">ユーザネーム</string>
+
+    <string name="new_user">登録</string>
+    <string name="back_user">戻る</string>
 </resources>
