@@ -1,5 +1,5 @@
 //山﨑里沙,2022/12/15
-//家族登録を解除するプログラム
+//友達登録を解除するプログラム
 package com.example.foodmanagement;
 
 import android.os.Bundle;
