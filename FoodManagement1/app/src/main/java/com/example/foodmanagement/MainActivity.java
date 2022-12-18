@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //buttonはログイン,button2は新規登録
         findViewById(R.id.button).setOnClickListener(this);
         findViewById(R.id.button2).setOnClickListener(this);
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent login = new Intent(this, LoginAccount.class);
         Intent register = new Intent(this, SignUp.class);
+
         if (v.getId() == R.id.button) {
             startActivity(login);
         } else if (v.getId() == R.id.button2) {
