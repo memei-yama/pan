@@ -36,7 +36,7 @@ public class SignUp extends AppCompatActivity {
     @Override
     public void onClick(View v) {
         Intent cancel = new Intent(this, MainActivity.class);
-        Intent register = new Intent(this, SignUp.class);
+        Intent register_ok = new Intent(this, Home.class);
 
         if (v.getId() == R.id.button) {
             startActivity(login);
