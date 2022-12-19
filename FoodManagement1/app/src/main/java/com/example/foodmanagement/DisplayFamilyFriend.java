@@ -1,4 +1,4 @@
-//山口芽依,2022/12/18
+//山﨑里沙,2022/12/19
 //家族・フレンドを表示させるプログラム
 
 package com.example.foodmanagement;
