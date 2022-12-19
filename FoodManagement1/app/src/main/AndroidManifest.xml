@@ -29,6 +29,80 @@
         </activity>
         <activity android:name=".LoginAccount" >
         </activity>
+        <activity android:name=".Account" >
+        </activity>
+        <activity android:name=".Approval" >
+        </activity>
+        <activity android:name=".Belt" >
+        </activity>
+        <activity android:name=".ChatRoom" >
+        </activity>
+        <activity android:name=".DeleteAccount" >
+        </activity>
+        <activity android:name=".DeleteFamily" >
+        </activity>
+        <activity android:name=".DeleteFriend" >
+        </activity>
+        <activity android:name=".DeleteMode" >
+        </activity>
+        <activity android:name=".DisplayFamilyFriend" >
+        </activity>
+        <activity android:name=".Favorite" >
+        </activity>
+        <activity android:name=".FavoriteView" >
+        </activity>
+        <activity android:name=".FoodDelete" >
+        </activity>
+        <activity android:name=".FoodDetails" >
+        </activity>
+        <activity android:name=".FoodNotification" >
+        </activity>
+        <activity android:name=".FoodSearch" >
+        </activity>
+        <activity android:name=".FoodSort" >
+        </activity>
+        <activity android:name=".FoodUpdate" >
+        </activity>
+        <activity android:name=".GetFamilyFriendInfo" >
+        </activity>
+        <activity android:name=".Home" >
+        </activity>
+        <activity android:name=".MemoRec" >
+        </activity>
+        <activity android:name=".MemoSend" >
+        </activity>
+        <activity android:name=".News" >
+        </activity>
+        <activity android:name=".notification" >
+        </activity>
+        <activity android:name=".RecipeSearch" >
+        </activity>
+        <activity android:name=".RegisterFamily" >
+        </activity>
+        <activity android:name=".RegisterFood" >
+        </activity>
+        <activity android:name=".RegisterFriend" >
+        </activity>
+        <activity android:name=".SearchUser" >
+        </activity>
+        <activity android:name=".TalkMain" >
+        </activity>
+        <activity android:name=".TextRec" >
+        </activity>
+        <activity android:name=".TextSend" >
+        </activity>
+        <activity android:name=".timelineMain" >
+        </activity>
+        <activity android:name=".timelineReaction" >
+        </activity>
+        <activity android:name=".timelineSend" >
+        </activity>
+        <activity android:name=".UpdateFamily" >
+        </activity>
+        <activity android:name=".UpdateUser" >
+        </activity>
+        <activity android:name=".UserNotice" >
+        </activity>
     </application>
 
 </manifest>
