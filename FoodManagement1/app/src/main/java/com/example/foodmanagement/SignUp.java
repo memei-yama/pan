@@ -1,4 +1,4 @@
-//山﨑里沙,2022/12/14
+//山﨑里沙,2022/12/22
 //新規登録するプログラム
 package com.example.foodmanagement;
 
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
     //変数の定義
     private EditText user_name;
-    public EditText user_mail;
+    private EditText user_mail;
     private EditText user_address;
     private EditText user_passwd;
 
@@ -38,8 +38,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         //画面遷移用
         Intent cancel = new Intent(this, MainActivity.class);
-        Intent register_ok = new Intent(this, Home.class);
-        Intent error = new Intent(this,SignUp.class);
+        Intent register_ok = new Intent(this, Home.class);//後から変更
+        Intent error = new Intent(this,SignUp.class);//後から変更
 
         //登録かキャンセルのボタンを押したとき
         if (v.getId() == R.id.button4) {
