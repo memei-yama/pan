@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="475dp"
+        android:layout_height="662dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="141dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:scrollbarSize="30dp"
+                android:text="@string/update_user"
+                android:backgroundTint="#26CA91"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:text="@string/family_menu"
+                android:backgroundTint="#26CA91"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:text="@string/friend_menu"
+                android:backgroundTint="#26CA91"
+                android:textSize="26sp" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:text="@string/delete_user"
+                android:backgroundTint="#26CA91"
+                android:textSize="26sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/username_txt2"
+        android:layout_width="205dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="113dp"
+        android:text="@string/username_txt"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

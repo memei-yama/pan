@@ -11,4 +11,9 @@
     <string name="new_user">登録</string>
     <string name="back_user">戻る</string>
     <string name="login_user">ログイン</string>
+
+    <string name="update_user">アカウント更新</string>
+    <string name="family_menu">家族メニュー</string>
+    <string name="friend_menu">フレンドメニュー</string>
+    <string name="delete_user">アカウント削除</string>
 </resources>
