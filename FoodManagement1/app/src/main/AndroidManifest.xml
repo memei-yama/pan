@@ -31,6 +31,10 @@
         </activity>
         <activity android:name=".Account" >
         </activity>
+        <activity android:name=".ViewFamily" >
+        </activity>
+        <activity android:name=".ViewFriend" >
+        </activity>
         <activity android:name=".Approval" >
         </activity>
         <activity android:name=".Belt" >
