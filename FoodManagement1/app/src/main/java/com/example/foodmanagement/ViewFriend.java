@@ -26,7 +26,7 @@ public class ViewFriend extends AppCompatActivity implements View.OnClickListene
         //画面遷移用
         Intent show_friend = new Intent(this, DisplayFamilyFriend.class);
         Intent register_friend = new Intent(this, RegisterFriend.class);
-        Intent notice_friend = new Intent(this, SignUp.class);//承認を実装するなら後から変更
+        Intent approval_friend = new Intent(this, Approval.class);
         Intent delete_friend = new Intent(this, DeleteFriend.class);
 
         if (v.getId() == R.id.button14) {
@@ -37,8 +37,7 @@ public class ViewFriend extends AppCompatActivity implements View.OnClickListene
             startActivity(register_friend);
         } else if (v.getId() == R.id.button16) {
             //フレンド承認画面へ遷移
-            //今は新規登録画面、承認を実装するなら後から変更
-            startActivity(notice_friend);
+            startActivity(approval_friend);
         } else if (v.getId() == R.id.button17) {
             //フレンド削除画面へ遷移
             startActivity(delete_friend);

@@ -24,7 +24,7 @@ public class ViewFamily extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         //画面遷移用
         Intent register_family = new Intent(this, RegisterFamily.class);
-        Intent notice_family = new Intent(this, LoginAccount.class);//承認を実装するなら後から変更
+        Intent approval_family = new Intent(this, Approval.class);
         Intent delete_family = new Intent(this, DeleteFamily.class);
 
         if (v.getId() == R.id.button11) {
@@ -32,8 +32,7 @@ public class ViewFamily extends AppCompatActivity implements View.OnClickListene
             startActivity(register_family);
         } else if (v.getId() == R.id.button12) {
             //家族承認画面へ遷移
-            //今はログイン画面、承認を実装するなら変更
-            startActivity(notice_family);
+            startActivity(approval_family);
         } else if (v.getId() == R.id.button13) {
             //家族削除画面へ遷移
             startActivity(delete_family);
