@@ -25,8 +25,8 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         //画面遷移用
         Intent update_user = new Intent(this, UpdateUser.class);
-        Intent family = new Intent(this, SignUp.class);//後から変更
-        Intent friend = new Intent(this, LoginAccount.class);//後から変更
+        Intent family = new Intent(this, ViewFamily.class);
+        Intent friend = new Intent(this, ViewFriend.class);
         Intent delete_user = new Intent(this, DeleteAccount.class);
 
         if (v.getId() == R.id.button10) {
@@ -34,11 +34,9 @@ public class Account extends AppCompatActivity implements View.OnClickListener {
             startActivity(update_user);
         } else if (v.getId() == R.id.button9) {
             //家族メニュー画面へ遷移
-            //今は新規登録画面
             startActivity(family);
         } else if (v.getId() == R.id.button8) {
             //フレンドメニュー画面へ遷移
-            //今はログイン画面
             startActivity(friend);
         } else if (v.getId() == R.id.button7) {
             //アカウント削除画面へ遷移
