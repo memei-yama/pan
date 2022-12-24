@@ -16,4 +16,13 @@
     <string name="family_menu">家族メニュー</string>
     <string name="friend_menu">フレンドメニュー</string>
     <string name="delete_user">アカウント削除</string>
+
+    <string name="new_family">家族新規作成</string>
+    <string name="approval_family">家族承認</string>
+    <string name="delete_family">家族削除</string>
+
+    <string name="new_friend">フレンド登録</string>
+    <string name="approval_friend">フレンド承認</string>
+    <string name="delete_friend">フレンド削除</string>
+    <string name="hyoji_friend">フレンド表示</string>
 </resources>
