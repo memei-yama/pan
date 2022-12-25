@@ -10,6 +10,7 @@
 
     <string name="new_user">登録</string>
     <string name="back_user">戻る</string>
+    <string name="next_user">次へ</string>
     <string name="login_user">ログイン</string>
 
     <string name="update_user">アカウント更新</string>
@@ -20,6 +21,7 @@
     <string name="new_family">家族新規作成</string>
     <string name="approval_family">家族承認</string>
     <string name="delete_family">家族削除</string>
+    <string name="name_family">家族</string>
 
     <string name="new_friend">フレンド登録</string>
     <string name="approval_friend">フレンド承認</string>
