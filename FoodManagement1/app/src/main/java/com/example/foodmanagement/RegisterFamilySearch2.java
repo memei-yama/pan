@@ -7,50 +7,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterFamilySearch2 extends AppCompatActivity implements View.OnClickListener {
     //変数の定義
-    private EditText family_mail;
-    Button user_button;
+    TextView user_name;
+    String user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_family2);
 
-        //メールアドレス
-        family_mail = (EditText) findViewById(R.id.editTextTextPersonName4);
+        user_name = findViewById(R.id.textView3);//後から変更
 
         //user_button = (Button)findViewById(R.id.button23);
         findViewById(R.id.button21).setOnClickListener(this);//検索ボタン
         findViewById(R.id.button23).setOnClickListener(this);//ユーザボタン
+
+        //RegisterFamilySearchからユーザIDとユーザ名を受け取る
+        Intent user_id = getIntent();
+        String get_user_id = user_id.getStringExtra("user_id");
+        user_name.setText(get_user_id);
     }
 
     //ボタンを押下したら適切な画面に遷移する
     @Override
     public void onClick(View v) {
-        int user_id;
         //画面遷移用
-        Intent register_family = new Intent(this, RegisterFamilyName.class);
-        Intent error = new Intent(this, SignUp.class);//後で変更
         Intent check = new Intent(this, RegisterFamilyCheck.class);
-
-        if (v.getId() == R.id.button21) {
-            //入力されたメールアドレスを取得する
-            String get_family_mail = family_mail.getText().toString();
-            //一致するデータがDBにあるか検索(ユーザIDとユーザ名が返ってくる)
-            user_id = 111;
-            if (user_id == 0){
-                startActivity(error);
-            } else {
-                user_button =new Button(this);
-                user_button.setText(user_id);
-            }
-            //家族登録画面へ遷移
-            //startActivity(register_family);
-        } else if (v.getId() == R.id.button23) {
+        if (v.getId() == R.id.button23) {
+            //確認画面へ遷移
             startActivity(check);
         }
     }

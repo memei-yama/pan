@@ -29,7 +29,7 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         //画面遷移用
-        Intent next = new Intent(this, RegisterFamilySearch2.class);
+        Intent next = new Intent(this, RegisterFamilySearch.class);
         Intent cancel = new Intent(this, ViewFamily.class);
 
         if (v.getId() == R.id.button19) {

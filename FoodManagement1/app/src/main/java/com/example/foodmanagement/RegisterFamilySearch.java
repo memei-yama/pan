@@ -27,23 +27,24 @@ public class RegisterFamilySearch extends AppCompatActivity implements View.OnCl
     //ボタンを押下したら適切な画面に遷移する
     @Override
     public void onClick(View v) {
-        int user_id;
+        String user_id;
         //画面遷移用
         Intent register_family = new Intent(this, RegisterFamilyName.class);
         Intent error = new Intent(this, SignUp.class);//後で変更
+        Intent search = new Intent(this, RegisterFamilySearch2.class);
 
         if (v.getId() == R.id.button20) {
             //入力されたメールアドレスを取得する
             String get_family_mail = family_mail.getText().toString();
             //一致するデータがDBにあるか検索(ユーザIDとユーザ名が返ってくる)
-            user_id = 111;
-            if (user_id == 0){
+            user_id = "yama";
+            if (user_id.equals("")){
                 startActivity(error);
             } else {
-
+                //検索結果表示画面へ遷移
+                search.putExtra("user_id",user_id);
+                startActivity(search);
             }
-            //家族登録画面へ遷移
-            startActivity(register_family);
         }
     }
 }
