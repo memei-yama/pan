@@ -18,7 +18,7 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_familyname);
 
-        //ユーザ名
+        //家族グループ名
         family_name = (EditText) findViewById(R.id.editTextTextPersonName2);
 
         findViewById(R.id.button19).setOnClickListener(this);//次へボタン
@@ -29,7 +29,7 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         //画面遷移用
-        Intent next = new Intent(this, RegisterFamilySearch.class);
+        Intent next = new Intent(this, RegisterFamilySearch2.class);
         Intent cancel = new Intent(this, ViewFamily.class);
 
         if (v.getId() == R.id.button19) {
