@@ -7,6 +7,18 @@
     tools:ignore="ExtraText">
 
     <Button
+        android:id="@+id/button26"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="#26CA91"
+        android:text="@string/back_user"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/button20"
         android:layout_width="130dp"
         android:layout_height="60dp"
