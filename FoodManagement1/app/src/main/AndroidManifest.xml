@@ -83,6 +83,16 @@
         </activity>
         <activity android:name=".RegisterFamily" >
         </activity>
+        <activity android:name=".RegisterFamilyName" >
+        </activity>
+        <activity android:name=".RegisterFamilySearch" >
+        </activity>
+        <activity android:name=".RegisterFamilySearch2" >
+        </activity>
+        <activity android:name=".RegisterFamilyCheck" >
+        </activity>
+        <activity android:name=".RegisterFamilyFin" >
+        </activity>
         <activity android:name=".RegisterFood" >
         </activity>
         <activity android:name=".RegisterFriend" >
