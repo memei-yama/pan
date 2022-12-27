@@ -23,7 +23,7 @@ public class ViewFamily extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         //画面遷移用
-        Intent register_family = new Intent(this, RegisterFamily.class);
+        Intent register_family = new Intent(this, RegisterFamilyName.class);
         Intent approval_family = new Intent(this, Approval.class);
         Intent delete_family = new Intent(this, DeleteFamily.class);
 
