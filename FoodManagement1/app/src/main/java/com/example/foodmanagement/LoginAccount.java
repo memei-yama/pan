@@ -50,6 +50,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
             String get_user_passwd = user_passwd.getText().toString();
 
             //メールアドレスとパスワードがDBにあるか検索する
+            String url = "http://appserver/userLogin?user_id=get_user_mail,user_passwd=get_user_passwd";
             correct = true;//後から変更
 
             if (get_user_mail.equals("") || get_user_passwd.equals("")){
