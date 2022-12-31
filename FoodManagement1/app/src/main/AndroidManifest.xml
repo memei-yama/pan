@@ -49,7 +49,7 @@
         </activity>
         <activity android:name=".DeleteMode" >
         </activity>
-        <activity android:name=".ListViewAdapter" >
+        <activity android:name=".DisplayFamilyFriend" >
         </activity>
         <activity android:name=".Favorite" >
         </activity>
