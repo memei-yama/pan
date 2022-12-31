@@ -34,7 +34,7 @@ function searchSendUser($timeline_id, $user_id){
 
 //リアクションユーザ一覧情報取得
 function getReaction($timeline_id){
-    list($user_id, $reaction_date) = timelineDB.getReaction($timelline_id);
+    list($user_id, $reaction_date) = timelineDB.getReaction($timeline_id);
     return array($user_id, $reaction_date);
 }
 
