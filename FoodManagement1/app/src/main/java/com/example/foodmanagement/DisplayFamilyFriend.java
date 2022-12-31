@@ -2,7 +2,10 @@
 //家族・フレンドを表示させるプログラム
 package com.example.foodmanagement;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DisplayFamilyFriend extends AppCompatActivity {
+public class DisplayFamilyFriend extends AppCompatActivity{
     public static Map<String, String> data;
     public static List<Map<String, String>> dataList;
     public static ListView listView;
@@ -24,8 +27,9 @@ public class DisplayFamilyFriend extends AppCompatActivity {
         setContentView(R.layout.display_familyfriend);
         dataList = new ArrayList<Map<String, String>>();
 
+        //フレンド登録している人の検索
         // ListViewに表示するためのDATAを作成する
-        int MAXDATA = 10;//表示させる個数はこれが制御している
+        int MAXDATA = 3;//表示させる個数はこれが制御している
         for (int i = 0; i < MAXDATA; i++) {
             data = new HashMap<String, String>();
             data.put("text1", "タイトル" + i);//このタイトルをユーザ名に変える
@@ -37,12 +41,12 @@ public class DisplayFamilyFriend extends AppCompatActivity {
                 this,
                 dataList,
                 R.layout.row,
-                new String[] { "text1"},
+                new String[] {"text1"},
                 new int[] { android.R.id.text1});
 
         // ListViewにアダプターをSETする
-        //listView = (ListView) findViewById(R.id.mainlist);//idが決まったら値をsetする
-        //listView.setAdapter(adapter);
-        //listView.setTextFilterEnabled(false);
+        listView = (ListView) findViewById(R.id.friend_list);//idが決まったら値をsetする
+        listView.setAdapter(adapter);
+        listView.setTextFilterEnabled(false);
     }
 }

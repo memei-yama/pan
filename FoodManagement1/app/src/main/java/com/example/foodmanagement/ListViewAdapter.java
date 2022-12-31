@@ -4,10 +4,13 @@
 package com.example.foodmanagement;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -16,7 +19,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ListViewAdapter extends SimpleAdapter {
+public class ListViewAdapter extends SimpleAdapter{
+    /*protected void onCreate(Bundle savedInstanceState) {
+        listView.setOnItemClickListener(this);
+    }
+    @Override
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        Intent intent = new Intent(this,ChatRoom.class);
+        // clickされたpositionのtextとphotoのID
+        String selectedText = scenes[position];
+        int selectedPhoto = photos[position];
+        intent.putExtra("Text", selectedText);
+        intent.putExtra("Photo", selectedPhoto);
+        // Activity をスイッチする
+        startActivity(intent);
+    }*/
 
     private LayoutInflater inflater;
     private List<? extends Map<String, ?>> listData;
@@ -44,7 +61,7 @@ public class ListViewAdapter extends SimpleAdapter {
             view = inflater.inflate(R.layout.row, parent, false);
 
             holder = new ViewHolder();
-            holder.text1 = (TextView) view.findViewById(android.R.id.text1);
+            holder.text1 = (TextView) view.findViewById(R.id.text1);
 
             view.setTag(holder);
         } else {
@@ -52,8 +69,7 @@ public class ListViewAdapter extends SimpleAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        String text1 = ((HashMap<?, ?>) listData.get(position)).get("text1").toString();
-        String text2 = ((HashMap<?, ?>) listData.get(position)).get("text2").toString();
+        String text1 = ((HashMap<?,?>) listData.get(position)).get("text1").toString();
         holder.text1.setText(text1);
 
         // セル上にあるボタンの処理
@@ -66,7 +82,6 @@ public class ListViewAdapter extends SimpleAdapter {
                 holder.text1.setTextColor(Color.RED);
             }
         });
-
         return view;
     }
 }
