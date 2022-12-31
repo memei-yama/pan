@@ -7,7 +7,7 @@
 <body>
 <?php
 
-//新規家族追加
+//チャット内容取得
 function getChat($room_id){
     list($serial_number, $date, $char_body, $user_id) = chatroomDB.getChat($room_id);
     return array($serial_number, $date, $char_body, $user_id);
@@ -21,8 +21,8 @@ function addChat($room_id, $user_id, $char_body){
 
 //送信先ユーザ検索
 function searchSendUser($room_id, $user_id){
-    list($user_ids) = chatroomDB.searchSendUser($room_id, $user_id);
-    return $user_ids;
+    list($send_user) = chatroomDB.searchSendUser($room_id, $user_id);
+    return $send_user;
 }
 
 
