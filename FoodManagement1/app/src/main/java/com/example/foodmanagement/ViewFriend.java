@@ -25,7 +25,7 @@ public class ViewFriend extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v) {
         //画面遷移用
         Intent show_friend = new Intent(this, DisplayFamilyFriend.class);
-        Intent register_friend = new Intent(this, RegisterFriend.class);
+        Intent register_friend = new Intent(this, RegisterFamilySearch.class);//ユーザ検索の部分は家族と同じなのでfamilyに遷移
         Intent approval_friend = new Intent(this, Approval.class);
         Intent delete_friend = new Intent(this, DeleteFriend.class);
 

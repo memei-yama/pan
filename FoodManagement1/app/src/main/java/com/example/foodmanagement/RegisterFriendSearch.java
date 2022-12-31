@@ -1,5 +1,5 @@
 //山﨑里沙,2022/12/29
-//フレンドユーザを検索するプログラム
+//フレンドユーザを検索するプログラム,これは使わない(RegisterFamilyで実装)
 package com.example.foodmanagement;
 
 import android.os.Bundle;
