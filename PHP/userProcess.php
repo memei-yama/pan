@@ -25,7 +25,7 @@ function returnUserInfo($user_id){
 
 //ユーザ情報更新
 function updateUserInfo($user_id){
-    list($user_name, $user_mail, $user_address, $user_passwd);
+    list($user_name, $user_mail, $user_address, $user_passwd) = userDB.updateUser($user_id);
     return array($user_name, $user_mail, $user_address, $user_passwd);
 }
 
