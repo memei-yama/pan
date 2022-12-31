@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>UserProcess</title>
+<title>userProcess</title>
 </head>
 <body>
 <?php
@@ -25,7 +25,8 @@ function returnUserInfo($user_id){
 
 //ユーザ情報更新
 function updateUserInfo($user_id){
-
+    list($user_name, $user_mail, $user_address, $user_passwd);
+    return array($user_name, $user_mail, $user_address, $user_passwd);
 }
 
 //パスワードを検索するメソッド
