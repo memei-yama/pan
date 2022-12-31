@@ -6,25 +6,28 @@ package com.example.foodmanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+//import android.view.View;
+//画面遷移にIntenetを使う
+//import android.content.Intent;
 
-public class Home extends AppCompatActivity {
+//public class Home extends AppCompatActivity implements View.OnClickListener{
+public class Home extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); //ここをホームに変える
+        setContentView(R.layout.home);
 
         //ボタンの設定
-        //Button food_register = findViewById(R.id.food_register);
-        //任意の食品を選択したとき
-
-        //Button food_search = findViewById(R.id.food_search);
-        //Button food_sort = findViewById(R.id.food_sort);
-        //Button favorite = findViewById(R.id.favorite);
-        //Button delete_mode = findViewById(R.id.delete_mode);
-
-        //テスト
-        //Button button_new = findViewById(R.id.button1);
+        //findViewById(R.id.button).setOnClickListener(this);
 
     }
+
+    //ボタン押下後の遷移
+    /*
+    @Override
+    public void onCLick(View v){
+
+    }
+     */
 }

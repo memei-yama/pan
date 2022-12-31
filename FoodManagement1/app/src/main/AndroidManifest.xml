@@ -97,6 +97,14 @@
         </activity>
         <activity android:name=".RegisterFriend" >
         </activity>
+        <activity android:name=".RegisterFriendSearch" >
+        </activity>
+        <activity android:name=".RegisterFriendSearch2" >
+        </activity>
+        <activity android:name=".RegisterFriendCheck" >
+        </activity>
+        <activity android:name=".RegisterFriendFin" >
+        </activity>
         <activity android:name=".SearchUser" >
         </activity>
         <activity android:name=".TalkMain" >
