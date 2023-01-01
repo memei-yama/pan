@@ -25,7 +25,8 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:text="メッセージ"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="invisible" />
 
     </LinearLayout>
 </LinearLayout>
