@@ -9,7 +9,7 @@ import android.content.Intent; //画面遷移のライブラリ
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Belt extends AppCompatActivity implements View.OnClickListener {
-    public int button = 0; //どこのボタンが押されているかの条件判定用
+    int button = 0; //どこのボタンが押されているかの条件判定用
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
