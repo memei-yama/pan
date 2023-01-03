@@ -108,7 +108,7 @@
 
 
     <ImageButton
-        android:id="@+id/heratButton"
+        android:id="@+id/heartButton"
         android:layout_width="75dp"
         android:layout_height="50dp"
         android:scaleType="fitCenter"
