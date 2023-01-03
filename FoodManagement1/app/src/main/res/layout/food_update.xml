@@ -13,12 +13,12 @@
         android:inputType="textPersonName"
         android:text="食品名"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintStart_toEndOf="@+id/shopView6"
         tools:layout_editor_absoluteY="506dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/shopView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -147,9 +147,9 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="63dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="286dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="268dp"
         android:backgroundTint="#FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
