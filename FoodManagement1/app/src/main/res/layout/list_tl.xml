@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/username_txt"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tl_name"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="送信日"
-            android:textSize="24sp"
+            android:textSize="20sp"
             tools:ignore="DuplicateIds" />
 
         <TextView
@@ -51,14 +51,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/explain_tl_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="個数"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tl_num"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="食品名"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/food"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -105,4 +105,12 @@
             android:layout_weight="1"
             app:srcCompat="@drawable/camera" />
     </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/heratButton"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/heart" />
 </LinearLayout>
