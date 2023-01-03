@@ -3,7 +3,6 @@
 package com.example.foodmanagement;
 
 import android.os.Bundle;
-import android.os.Message;
 import android.view.View; //ボタンクリックのライブラリ
 import android.content.Intent; //画面遷移のライブラリ
 
@@ -26,14 +25,16 @@ public class Belt extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Intent home = new Intent(this, Home.class);
+        Intent mypage = new Intent(this, Account.class);
         Intent timeline = new Intent(this, timelineMain.class);
-        Intent message = new Intent(this, Message.class);
+        Intent talk = new Intent(this, TalkMain.class);
 
         if (v.getId() == R.id.homeButton && button != 1) {
             startActivity(home);
             button = 1;
 
         } else if (v.getId() == R.id.mypageButton && button != 2) {
+            startActivity(mypage);
             button = 2;
 
         } else if (v.getId() == R.id.timelineButton && button != 3) {
@@ -41,7 +42,7 @@ public class Belt extends AppCompatActivity implements View.OnClickListener {
             button = 3;
 
         } else if (v.getId() == R.id.messageButton && button != 4) {
-            startActivity(message);
+            startActivity(talk);
             button = 4;
         }
     }
