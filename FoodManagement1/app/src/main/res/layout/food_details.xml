@@ -6,19 +6,19 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/shopName3"
+        android:id="@+id/shopName6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="購入店"
         android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/foodNum3"
+        app:layout_constraintStart_toEndOf="@+id/shopView6"
+        app:layout_constraintTop_toBottomOf="@+id/foodNum6"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/shopView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -55,7 +55,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/foodNum3"
+        android:id="@+id/foodNum6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,11 +75,11 @@
         android:text="期限"
         android:textSize="28sp"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/foodName3"
+        app:layout_constraintTop_toBottomOf="@+id/foodName6"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView6"
         android:layout_width="258dp"
         android:layout_height="264dp"
         android:layout_marginTop="24dp"
@@ -108,7 +108,7 @@
         android:text="食品名:"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -136,7 +136,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/foodName3"
+        android:id="@+id/foodName6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -144,16 +144,16 @@
         android:text="食品名"
         android:textSize="28sp"
         app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/foodimageView6"
         android:layout_width="63dp"
         android:layout_height="53dp"
         android:layout_marginTop="286dp"
         android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/heart" />
 </androidx.constraintlayout.widget.ConstraintLayout>
