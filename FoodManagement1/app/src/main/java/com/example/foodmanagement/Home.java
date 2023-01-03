@@ -1,4 +1,4 @@
-//山口芽依,2022/12/14
+//山口芽依,2023/01/03
 //ホーム画面のプログラム
 
 package com.example.foodmanagement;
@@ -6,28 +6,54 @@ package com.example.foodmanagement;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-//import android.view.View;
-//画面遷移にIntenetを使う
-//import android.content.Intent;
+import android.view.View;
+import android.content.Intent;
 
-//public class Home extends AppCompatActivity implements View.OnClickListener{
-public class Home extends AppCompatActivity{
+public class Home extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.home_grid); //xmlファイル名変更
 
-        //ボタンの設定
-        //findViewById(R.id.button).setOnClickListener(this);
+        //各種ボタン設定
+        //食品登録
+        //register_button = findViewById(R.id.button ).setOnClickListener(this);
 
+        //食品を選択（食品詳細表示）
+
+        //検索
+        //search_button = findViewById(R.id.button ).setOnClickListener(this);
+
+        //並べ替え
+        //sort_button = findViewById(R.id.button ).setOnClickListener(this);
+
+        //お気に入り
+        //favorite_button = findViewById(R.id.button ).setOnClickListener(this);
+
+        //削除モード
+        //delete_mode_button = findViewById(R.id.button ).setOnClickListener(this);
     }
 
-    //ボタン押下後の遷移
-    /*
+
+    //
+
     @Override
-    public void onCLick(View v){
+    public void onClick(View v) {
+        Intent food_register = new Intent(this, RegisterFood.class);
+        Intent food_details = new Intent(this, FoodDetails.class);
+        Intent food_search = new Intent(this, FoodSearch.class);
+        Intent food_sort = new Intent(this, FoodSearch.class);
+        Intent favorite = new Intent(this, Favorite.class);
+        Intent delete_mode = new Intent(this, DeleteMode.class);
+
+
+        //どのボタンが押下されたか、それによる画面遷移
+        if (v.getId() == R.id.button ){ //食品登録ボタン
+
+        }
+
 
     }
-     */
 }
+
