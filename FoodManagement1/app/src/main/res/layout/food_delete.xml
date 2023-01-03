@@ -30,29 +30,29 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button33"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="136dp"
-        android:backgroundTint="#26CA91"
-        android:text="@string/back_user"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/button34"
         android:layout_width="130dp"
         android:layout_height="60dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="84dp"
         android:backgroundTint="#26CA91"
         android:text="削除"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#26CA91"
+        android:text="@string/back_user"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/foodNum4"
@@ -156,4 +156,19 @@
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/heart" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="160dp"
+        android:text="この食品を削除しますか？"
+        android:textColor="#EA2727"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
