@@ -113,6 +113,8 @@
         </activity>
         <activity android:name=".TextSend" >
         </activity>
+        <activity android:name=".timelineList" >
+        </activity>
         <activity android:name=".timelineMain" >
         </activity>
         <activity android:name=".timelineReaction" >
