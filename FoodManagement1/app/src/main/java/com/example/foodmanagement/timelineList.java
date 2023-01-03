@@ -9,28 +9,28 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class timelineList extends AppCompatActivity implements View.OnClickListener{
-    boolean favorite = false;
+    boolean good = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_tl);
 
         findViewById(R.id.heratButton).setOnClickListener(this);
-        ImageButton myImage = findViewById(R.id.heratButton);
     }
 
     @Override
     public void onClick(View v){
         ImageButton heart = findViewById(R.id.heratButton);
 
-        if (!favorite) {
+        if (!good) {
             heart.setImageResource(R.drawable.color_heart);
-            favorite = true;
+            good = true;
 
-        } else if (favorite) {
+        } else if (good) {
             heart.setImageResource(R.drawable.heart);
-            favorite = false;
+            good = false;
         }
     }
 
 }
+
