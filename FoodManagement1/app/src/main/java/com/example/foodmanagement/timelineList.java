@@ -15,12 +15,12 @@ public class timelineList extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_tl);
 
-        findViewById(R.id.heratButton).setOnClickListener(this);
+        findViewById(R.id.heartButton).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v){
-        ImageButton heart = findViewById(R.id.heratButton);
+        ImageButton heart = findViewById(R.id.heartButton);
 
         if (!good) {
             heart.setImageResource(R.drawable.color_heart);
