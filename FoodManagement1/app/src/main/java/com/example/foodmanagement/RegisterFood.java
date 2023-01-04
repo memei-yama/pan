@@ -18,7 +18,15 @@ import android.widget.DatePicker;
 import android.icu.util.Calendar;
 
 //個数選択
+import android.widget.ImageButton;
 import android.widget.NumberPicker;
+
+//お気に入り
+import android.widget.ImageView;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.view.ViewGroup;
+
 
 
 public class RegisterFood extends AppCompatActivity implements View.OnClickListener{
@@ -29,6 +37,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
     private EditText food_shop;
     private EditText food_num;
     //private NumberPicker food_num;
+    private ImageButton favorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,12 +90,19 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         //個数　（個数選択）
         food_num = (EditText) findViewById(R.id.foodNum);
 
+        //今コメントアウトしてるものを実装する
         //food_num = (NumberPicker) findViewById(R.id.foodNum);
 
         //上限、下限値、初期値設定
         //food_num.setMaxValue(50);
         //food_num.setMinValue(1);
         //food_num.setValue(1);
+
+        //お気に入り
+        findViewById(R.id.imageButton2).setOnClickListener(onClickSetImage);
+        //favorite.setImageResource(R.drawable.heart);
+
+
 
 
         //戻るボタン
@@ -95,7 +111,22 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button38).setOnClickListener(this);
     }
 
+    //ハートマークの画像変更
+    View.OnClickListener onClickSetImage = new View.OnClickListener() {
+        int res_id = R.drawable.heart;
 
+        @Override
+        public void onClick(View v) {
+            // 画像情報更新
+            switch(res_id) {
+                case R.drawable.heart: res_id = R.drawable.color_heart; break;
+                case R.drawable.color_heart: res_id = R.drawable.heart; break;
+            }
+
+            // 画像切り替え
+            ((ImageView)v).setImageResource(res_id);
+        }
+    };
 
 
 
@@ -130,11 +161,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
                 startActivity(home);
             }
 
-
         }
-
-
-
 
 
     }
