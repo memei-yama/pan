@@ -27,7 +27,13 @@
         </activity>
         <activity android:name=".SignUp" >
         </activity>
+        <activity android:name=".SignUpFin" >
+        </activity>
         <activity android:name=".LoginAccount" >
+        </activity>
+        <activity android:name=".LoginError" >
+        </activity>
+        <activity android:name=".LoginError2" >
         </activity>
         <activity android:name=".Account" >
         </activity>
@@ -92,6 +98,8 @@
         <activity android:name=".RegisterFamilyCheck" >
         </activity>
         <activity android:name=".RegisterFamilyFin" >
+        </activity>
+        <activity android:name=".RegisterFamilyError" >
         </activity>
         <activity android:name=".RegisterFood" >
         </activity>
