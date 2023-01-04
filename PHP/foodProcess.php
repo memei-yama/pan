@@ -18,6 +18,7 @@ function getFood($user_id){
         $food_id, $food_name, $food_date, $date_select, $added_date, 
         $shop_name, $food_number, $category_id, $favorite, $image_rink
     ) = foodDB.getFood();
+    $image_data = file_get_contents($image_rink);
 //画像ファイルリンクから画像データと画像名を取得
     return array($food_id, $food_name, $food_date, $date_select, $added_date, 
     $shop_name, $food_number, $category_id, $favorite, $image_data, $image_name);
