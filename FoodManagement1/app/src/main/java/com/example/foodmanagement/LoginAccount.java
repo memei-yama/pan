@@ -29,7 +29,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
     private EditText user_mail;
     private EditText user_passwd;
     //API
-    private final String API_URL_PREFIX = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
+    //private final String API_URL_PREFIX = "www.googleapis.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
         Intent cancel = new Intent(this, MainActivity.class);
         Intent login = new Intent(this, Home.class);
         Intent error_null = new Intent(this, SignUp.class);//後から変更
-        Intent error_false = new Intent(this, News.class);//後から変更
+        Intent error_false = new Intent(this, SignUp.class);//後から変更
 
         //戻るボタンを押下したら初期画面に遷移
         if (v.getId() == R.id.button5) {
@@ -71,8 +71,8 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
             //String url = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
 
 
-            MyAsync asynk = new MyAsync(user_mail,user_passwd);
-            asynk.execute();
+            //MyAsync asynk = new MyAsync(user_mail, user_passwd);
+            //asynk.execute();
 
             correct = false;//後から変更
 
@@ -91,7 +91,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    class MyAsync extends AsyncTask <String, Void, String> {
+    /*class MyAsync extends AsyncTask<String, Void, String> {
 
         private final WeakReference<TextView> titleViewReference;
         private final WeakReference<TextView> dateViewReference;
@@ -163,5 +163,5 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
             }
 
         }
-    }
+    }*/
 }
