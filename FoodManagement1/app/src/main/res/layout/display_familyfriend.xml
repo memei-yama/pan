@@ -18,7 +18,7 @@
         tools:ignore="MissingConstraints" />
 
     <ListView
-        android:id="@+id/friend_list"
+        android:id="@+id/reactionList"
         android:layout_width="410dp"
         android:layout_height="560dp"
         android:layout_marginTop="1dp"

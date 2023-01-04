@@ -45,7 +45,7 @@ public class DisplayFamilyFriend extends AppCompatActivity{
                 new int[] { android.R.id.text1});
 
         // ListViewにアダプターをSETする
-        listView = (ListView) findViewById(R.id.friend_list);//idが決まったら値をsetする
+        listView = (ListView) findViewById(R.id.reactionList);//idが決まったら値をsetする
         listView.setAdapter(adapter);
         listView.setTextFilterEnabled(false);
     }

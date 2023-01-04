@@ -31,15 +31,15 @@ public class RegisterFamilySearch extends AppCompatActivity implements View.OnCl
         String user_name;
         //画面遷移用
         Intent register_family = new Intent(this, RegisterFamilyName.class);
-        Intent error = new Intent(this, SignUp.class);//後で変更
+        Intent error = new Intent(this, RegisterFamilyError.class);
         Intent search = new Intent(this, RegisterFamilySearch2.class);
 
         if (v.getId() == R.id.button20) {
             //入力されたメールアドレスを取得する
             String get_family_mail = family_mail.getText().toString();
             //一致するデータがDBにあるか検索(ユーザIDとユーザ名が返ってくる)
-            user_mail = "yama@";
-            user_name = "risa";
+            user_mail = "yamada_hanako@gmail.com";
+            user_name = "yammma";
             if (user_mail.equals("")){
                 startActivity(error);
             } else {

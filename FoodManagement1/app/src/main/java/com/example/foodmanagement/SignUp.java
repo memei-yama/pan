@@ -38,8 +38,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         //画面遷移用
         Intent cancel = new Intent(this, MainActivity.class);
-        Intent register_ok = new Intent(this, Home.class);//後から変更
-        Intent error = new Intent(this,SignUp.class);//後から変更
+        Intent register_ok = new Intent(this, SignUpFin.class);
+        Intent error = new Intent(this,LoginError.class);
 
         //登録かキャンセルのボタンを押したとき
         if (v.getId() == R.id.button4) {
@@ -59,11 +59,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             if (!get_user_name.equals("") && !get_user_mail.equals("") && !get_user_passwd.equals("")) {
                 //ユーザ名とメールアドレスとパスワードがnullじゃなかった時
                 //データベースに登録する処理を書く
-                //本当は「ユーザ登録完了」画面に遷移する、今はHome.java
                 startActivity(register_ok);
             } else {
                 //ユーザ名とメールアドレスとパスワードの一つでもnullだったらエラー画面
-                //本当はerror文が表示されたSignUpErrorに遷移する、今はSignUp
                 startActivity(error);
             }
         }
