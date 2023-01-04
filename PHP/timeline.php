@@ -17,6 +17,7 @@ function getTimeline($user_id){
         $reaction_number,
         $image_rink
     ) = timelineDB.getTimeline($user_id);
+    $image_data = file_get_contents($image_rink);
         //画像ファイルリンクより画像データと画像名を取得
     return array($timeline_id, $user_id, $food_id, $send_date, $char_body, $reaction_number, $image_data, $image_name);
 }
