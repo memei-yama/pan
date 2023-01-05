@@ -16,10 +16,10 @@ public class SignUpFin extends AppCompatActivity implements View.OnClickListener
 
         findViewById(R.id.button43).setOnClickListener(this);//戻るボタン
     }
-    //ボタンを押下したらマイページに遷移する
+    //ボタンを押下したらログイン画面に遷移する
     @Override
     public void onClick(View v) {
-        Intent fin = new Intent(this, Account.class);
+        Intent fin = new Intent(this, LoginAccount.class);
 
         if (v.getId() == R.id.button43) {
             startActivity(fin);
