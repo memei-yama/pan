@@ -14,7 +14,8 @@
         android:text="削除モード"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="575dp" />
+        tools:layout_editor_absoluteY="575dp"
+        tools:ignore="MissingConstraints" />
 
     <SearchView
         android:id="@+id/searchView"
@@ -49,5 +50,6 @@
         android:text="登録"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="575dp" />
+        tools:layout_editor_absoluteY="575dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
