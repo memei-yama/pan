@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/delFood"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="#26CA91"
+        android:text="削除モード"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="575dp" />
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="400dp"
@@ -20,7 +31,7 @@
     <GridView
         android:id="@+id/food_grid"
         android:layout_width="409dp"
-        android:layout_height="550dp"
+        android:layout_height="500dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="1dp"
@@ -28,4 +39,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <Button
+        android:id="@+id/regFood"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:backgroundTint="#26CA91"
+        android:text="登録"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="575dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
