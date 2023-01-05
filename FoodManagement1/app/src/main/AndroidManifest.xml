@@ -103,6 +103,10 @@
         </activity>
         <activity android:name=".RegisterFood" >
         </activity>
+        <activity android:name=".RegisterFoodMenu" >
+        </activity>
+        <activity android:name=".RegisterFoodCamera" >
+        </activity>
         <activity android:name=".RegisterFriend" >
         </activity>
         <activity android:name=".RegisterFriendSearch" >
