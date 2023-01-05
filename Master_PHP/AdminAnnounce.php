@@ -16,7 +16,7 @@
             <br />
  
             <input type="submit" value="戻る" />
-            <input type="submit" value="送信" />
+            <input type="submit" value="確認" />
         </form>
     </body>
 </html>
