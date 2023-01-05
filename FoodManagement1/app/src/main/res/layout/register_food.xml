@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <NumberPicker
+        android:id="@+id/foodNum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/foodNum"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="380dp" />
+
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
@@ -49,7 +60,8 @@
         android:text="食品名:"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="347dp" />
+        tools:layout_editor_absoluteY="347dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/shopView"
@@ -93,8 +105,8 @@
         android:inputType="textPersonName"
         android:text="食品名"
         android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="347dp" />
 
     <EditText
@@ -104,20 +116,21 @@
         android:ems="10"
         android:inputType="date"
         android:textSize="20sp"
+        android:focusable="false"
         app:layout_constraintStart_toEndOf="@+id/textView23"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="400dp" />
 
-    <EditText
+    <NumberPicker
         android:id="@+id/foodNum"
-        android:layout_width="264dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="452dp" />
+        tools:layout_editor_absoluteY="380dp" />
 
     <EditText
         android:id="@+id/shopName"
@@ -142,6 +155,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
@@ -149,5 +163,6 @@
         android:backgroundTint="#FDFCFC"
         app:srcCompat="@drawable/apple"
         tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="63dp" />
+        tools:layout_editor_absoluteY="63dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
