@@ -6,7 +6,6 @@
 
     <Button
         android:id="@+id/button44"
-        tools:ignore="MissingConstraints"
         android:layout_width="242dp"
         android:layout_height="78dp"
         android:layout_marginStart="84dp"
@@ -21,7 +20,6 @@
 
     <Button
         android:id="@+id/button45"
-        tools:ignore="MissingConstraints"
         android:layout_width="242dp"
         android:layout_height="78dp"
         android:layout_marginStart="84dp"
