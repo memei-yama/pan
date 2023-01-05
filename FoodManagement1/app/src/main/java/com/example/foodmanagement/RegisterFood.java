@@ -1,5 +1,5 @@
 //山口芽依,2023/01/03
-//食品登録のプログラム
+//食品登録のプログラム 手入力ボタンを押すとここに遷移してくる
 
 package com.example.foodmanagement;
 
@@ -79,7 +79,6 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
                          );
                          //dialogを表示
                          datePickerDialog.show();
-
                      }
         });
 
@@ -88,7 +87,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         food_shop = (EditText) findViewById(R.id.shopName);
 
         //個数　（個数選択）
-        food_num = (EditText) findViewById(R.id.foodNum);
+        //food_num = (EditText) findViewById(R.id.foodNum);
 
         //今コメントアウトしてるものを実装する
         //food_num = (NumberPicker) findViewById(R.id.foodNum);
@@ -100,9 +99,6 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
 
         //お気に入り
         findViewById(R.id.imageButton2).setOnClickListener(onClickSetImage);
-        //favorite.setImageResource(R.drawable.heart);
-
-
 
 
         //戻るボタン
@@ -134,40 +130,24 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        //Intent register_self = new Intent(this, registerFoodJAN.class);
-        //Intent register_JAN = new Intent(this, registerSelf.class);
         Intent home = new Intent(this, Home.class);
 
-        //カメラ読み取りボタンを押した時
-        if (v.getId() == R.id.button ){
-            //カメラ読み取り
-            registerFoodJAN();
-
-        }else if (v.getId() == R.id.button ){ //手入力ボタンを押した時
+        String get_food_name = food_name.getText().toString();
+        //String get_food_name = food_name.getText().toString();
+        //String get_food_name = food_name.getText().toString();
+        String get_food_shop = food_shop.getText().toString();
 
 
-            String get_food_name = food_name.getText().toString();
-            //String get_food_name = food_name.getText().toString();
-            //String get_food_name = food_name.getText().toString();
-            String get_food_shop = food_shop.getText().toString();
-
-
-            //food_nameとfood_dateの確認
-            if(!get_food_name.equals("") ){
-                //データベースに登録する処理
-                startActivity(home);
-            }else{
-                //エラー画面に
-                startActivity(home);
-            }
-
+        //food_nameとfood_dateの確認
+        if(!get_food_name.equals("") ){
+            //データベースに登録する処理
+            startActivity(home);
+        }else{
+            //エラー画面に
+            startActivity(home);
         }
 
 
-    }
-
-    public static void registerFoodJAN(){
-        
 
 
     }
