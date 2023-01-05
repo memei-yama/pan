@@ -18,7 +18,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         //各種ボタン設定
         //食品登録
-        //register_button = findViewById(R.id.button ).setOnClickListener(this);
+        findViewById(R.id.regFood).setOnClickListener(this);
 
         //食品を選択（食品詳細表示）
 
@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         //favorite_button = findViewById(R.id.button ).setOnClickListener(this);
 
         //削除モード
-        //delete_mode_button = findViewById(R.id.button ).setOnClickListener(this);
+        findViewById(R.id.delFood).setOnClickListener(this);
     }
 
 
@@ -49,10 +49,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
 
         //どのボタンが押下されたか、それによる画面遷移
-        if (v.getId() == R.id.button ){ //食品登録ボタン
-
+        if (v.getId() == R.id.regFood){ //食品登録ボタン
+            startActivity(food_register);
+        } else if (v.getId() == R.id.delFood){ //削除モードボタン
+            startActivity(delete_mode);
         }
-
 
     }
 }
