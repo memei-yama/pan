@@ -5,6 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <NumberPicker
+        android:id="@+id/foodNum5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/foodNum3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="383dp" />
+
     <EditText
         android:id="@+id/shopName4"
         android:layout_width="264dp"
@@ -130,20 +141,21 @@
         android:ems="10"
         android:inputType="date"
         android:textSize="20sp"
+        android:focusable="false"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         tools:layout_editor_absoluteY="397dp"
         tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/foodNum4"
-        android:layout_width="264dp"
+    <NumberPicker
+        android:id="@+id/foodNum3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        tools:layout_editor_absoluteY="453dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="383dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
