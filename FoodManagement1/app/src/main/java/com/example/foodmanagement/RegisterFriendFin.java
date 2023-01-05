@@ -1,5 +1,5 @@
 //山﨑里沙,2022/12/29
-//フレンド完了確認プログラム
+//フレンド完了確認プログラム、これは使わない(RegisterFamilyで実装)
 package com.example.foodmanagement;
 
 import android.content.Intent;

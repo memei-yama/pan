@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //ボタンを押下したら新規登録かログイン画面に遷移する
     @Override
     public void onClick(View v) {
-        Intent login = new Intent(this, Account.class);
+        Intent login = new Intent(this, LoginAccount.class);
         Intent register = new Intent(this, SignUp.class);
 
         if (v.getId() == R.id.button) {

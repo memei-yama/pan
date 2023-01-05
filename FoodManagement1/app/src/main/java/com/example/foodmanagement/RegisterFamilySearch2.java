@@ -25,7 +25,6 @@ public class RegisterFamilySearch2 extends AppCompatActivity implements View.OnC
         view_user_mail = findViewById(R.id.textView8);
         view_user_name = findViewById(R.id.textView7);
 
-        findViewById(R.id.button21).setOnClickListener(this);//検索ボタン
         findViewById(R.id.button23).setOnClickListener(this);//ユーザボタン
         findViewById(R.id.button27).setOnClickListener(this);//戻るボタン
 
