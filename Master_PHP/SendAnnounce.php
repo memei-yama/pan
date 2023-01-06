@@ -9,7 +9,7 @@
  
 <h2>お知らせ内容</h2>    
  
-<form action="mailto.php" method="post">
+<form action="FinAnnounce.php" method="post">
  
 <table border="1">
 <tr>
