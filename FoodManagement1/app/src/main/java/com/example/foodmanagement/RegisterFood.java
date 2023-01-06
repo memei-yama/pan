@@ -35,20 +35,14 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
     private EditText food_name;
     private EditText food_date;
     private EditText food_shop;
-    private EditText food_num;
-    //private NumberPicker food_num;
+    //private EditText food_num;
+    private NumberPicker food_num;
     private ImageButton favorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_food); //食品登録に変更
-
-        //各種ボタン設定
-        //カメラ読み取りボタン
-
-        //手入力
-
+        setContentView(R.layout.register_food);
 
         //食品名　（テキスト）
         food_name = (EditText) findViewById(R.id.foodName);
@@ -90,12 +84,12 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         //food_num = (EditText) findViewById(R.id.foodNum);
 
         //今コメントアウトしてるものを実装する
-        //food_num = (NumberPicker) findViewById(R.id.foodNum);
+        food_num = (NumberPicker) findViewById(R.id.foodNum);
 
         //上限、下限値、初期値設定
-        //food_num.setMaxValue(50);
-        //food_num.setMinValue(1);
-        //food_num.setValue(1);
+        food_num.setMaxValue(50);
+        food_num.setMinValue(1);
+        food_num.setValue(1);
 
         //お気に入り
         findViewById(R.id.imageButton2).setOnClickListener(onClickSetImage);
