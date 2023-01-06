@@ -5,7 +5,7 @@
         <title>ログイン</title>
     </head>
     <body>
-        <form action="confirmation.php" method="post">
+        <form action="AdminAnnounce.php" method="post">
             ユーザ名：<br />
             <input type="text" name="name" size="50" value="" /><br />
             パスワード：<br />
