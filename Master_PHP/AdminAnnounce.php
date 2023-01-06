@@ -5,7 +5,7 @@
         <title>お知らせ</title>
     </head>
     <body>
-        <form action="confirmation.php" method="post">
+        <form action="SendAnnounce.php" method="post">
             お知らせ件名：<br />
             <input type="text" name="name" size="50" value="" /><br />
 
