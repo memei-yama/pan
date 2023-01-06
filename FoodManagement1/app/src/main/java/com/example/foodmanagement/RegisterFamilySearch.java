@@ -22,6 +22,7 @@ public class RegisterFamilySearch extends AppCompatActivity implements View.OnCl
         family_mail = (EditText) findViewById(R.id.editTextTextPersonName3);
 
         findViewById(R.id.button20).setOnClickListener(this);//検索ボタン
+        findViewById(R.id.button26).setOnClickListener(this);//戻るボタン
     }
 
     //ボタンを押下したら適切な画面に遷移する
@@ -49,6 +50,8 @@ public class RegisterFamilySearch extends AppCompatActivity implements View.OnCl
                 //検索結果表示画面へ遷移
                 startActivity(search);
             }
+        } else if (v.getId() == R.id.button26) {
+            startActivity(register_family);
         }
     }
 }
