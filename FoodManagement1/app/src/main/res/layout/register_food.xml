@@ -9,12 +9,13 @@
         android:id="@+id/foodNum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/foodNum"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="380dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView21"
@@ -33,11 +34,12 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="268dp"
+        android:layout_marginEnd="7dp"
         android:backgroundTint="#FFFFFF"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/heart"
-        tools:layout_editor_absoluteX="334dp"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -57,10 +59,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
         android:text="食品名:"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="347dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -101,48 +104,54 @@
         android:id="@+id/foodName"
         android:layout_width="264dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="15dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="食品名"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="347dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="264dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
+        android:focusable="false"
         android:inputType="date"
         android:textSize="20sp"
-        android:focusable="false"
         app:layout_constraintStart_toEndOf="@+id/textView23"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="400dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView22"
+        tools:ignore="MissingConstraints" />
 
     <NumberPicker
         android:id="@+id/foodNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/textView21"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="380dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/shopName"
         android:layout_width="264dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="食品名"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/shopView"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="506dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView24"
@@ -160,9 +169,12 @@
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="60dp"
         android:backgroundTint="#FDFCFC"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/apple"
-        tools:layout_editor_absoluteX="54dp"
-        tools:layout_editor_absoluteY="63dp"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
