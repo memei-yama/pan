@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".SignUpFin" >
         </activity>
+        <activity android:name=".SignUpError" >
+        </activity>
         <activity android:name=".LoginAccount" >
         </activity>
         <activity android:name=".LoginError" >

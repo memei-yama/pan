@@ -73,15 +73,15 @@ public class ListViewAdapter extends SimpleAdapter{
         holder.text1.setText(text1);
 
         // セル上にあるボタンの処理
-        Button btn = (Button) view.findViewById(R.id.rowbutton);
-        btn.setTag(position);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
+        //Button btn = (Button) view.findViewById(R.id.rowbutton);
+        //btn.setTag(position);
+        //btn.setOnClickListener(new View.OnClickListener() {
+           // @Override
+           // public void onClick(View arg0) {
                 // 選択したセルの文字を赤色にする
-                holder.text1.setTextColor(Color.RED);
-            }
-        });
+             //   holder.text1.setTextColor(Color.RED);
+           // }
+        //});
         return view;
     }
 }

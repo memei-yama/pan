@@ -45,7 +45,7 @@ public class RegisterFamilyCheck extends AppCompatActivity implements View.OnCli
             //ユーザ検索画面へ遷移
             startActivity(cancel);
         } else if (v.getId() == R.id.button25) {
-            //家族メニュー画面へ遷移
+            //登録完了画面へ遷移
             startActivity(next);
         }
     }

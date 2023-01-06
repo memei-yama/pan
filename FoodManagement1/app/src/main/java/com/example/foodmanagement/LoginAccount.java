@@ -74,7 +74,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
             MyAsync asynk = new MyAsync(user_mail, user_passwd);
             asynk.execute();
 
-            correct = false;//後から変更
+            correct = true;//後から変更
 
             if (get_user_mail.equals("") || get_user_passwd.equals("")){
                 //メールアドレスまたはパスワードがnullだったときLoginErrorNull.javaに遷移

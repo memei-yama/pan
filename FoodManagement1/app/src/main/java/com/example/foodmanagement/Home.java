@@ -40,7 +40,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent food_register = new Intent(this, RegisterFood.class);
+        Intent food_register_menu = new Intent(this, RegisterFoodMenu.class);
         Intent food_details = new Intent(this, FoodDetails.class);
         Intent food_search = new Intent(this, FoodSearch.class);
         Intent food_sort = new Intent(this, FoodSearch.class);
@@ -50,7 +50,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         //どのボタンが押下されたか、それによる画面遷移
         if (v.getId() == R.id.regFood){ //食品登録ボタン
-            startActivity(food_register);
+            startActivity(food_register_menu);
         } else if (v.getId() == R.id.delFood){ //削除モードボタン
             startActivity(delete_mode);
         }

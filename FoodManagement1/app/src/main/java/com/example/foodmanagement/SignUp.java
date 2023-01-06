@@ -39,7 +39,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         //画面遷移用
         Intent cancel = new Intent(this, MainActivity.class);
         Intent register_ok = new Intent(this, SignUpFin.class);
-        Intent error = new Intent(this,LoginError.class);
+        Intent error = new Intent(this,SignUpError.class);
 
         //登録かキャンセルのボタンを押したとき
         if (v.getId() == R.id.button4) {
