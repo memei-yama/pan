@@ -9,12 +9,15 @@
         android:id="@+id/delFood"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:layout_marginEnd="35dp"
+        android:layout_marginBottom="108dp"
         android:backgroundTint="#26CA91"
         android:text="削除モード"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="575dp"
+        app:layout_constraintTop_toBottomOf="@+id/food_grid"
         tools:ignore="MissingConstraints" />
 
     <SearchView
@@ -46,10 +49,13 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="108dp"
         android:backgroundTint="#26CA91"
         android:text="登録"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="575dp"
+        app:layout_constraintTop_toBottomOf="@+id/food_grid"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
