@@ -9,7 +9,7 @@
  
 <h2>お知らせ送信完了</h2>    
  
-<input type="submit" value="戻る" />
+<input type="button" onclick="location.href='./AdminMenu.php'" value="戻る" style="width:100px;height:50px">
 
 </body>
     

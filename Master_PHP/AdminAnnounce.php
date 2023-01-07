@@ -12,11 +12,10 @@
  
             お知らせ内容：<br />
             <textarea name="inquiry" cols="50" rows="5"></textarea><br />
- 
             <br />
  
-            <input type="submit" value="戻る" />
-            <input type="submit" value="確認" />
+            <input type="button" onclick="history.back()" value="戻る" style="width:100px;height:50px">
+            <input type="submit" value="確認" style="width:100px;height:50px" />
         </form>
     </body>
 </html>

@@ -18,12 +18,12 @@
 </tr>
 <tr>
 <td>お知らせ内容</td>
-<td><?php echo $_POST["detail"]; ?></td>
+<td><?php echo $_POST["announce_detail"]; ?></td>
 </tr>
 </table>
  
-<input type="submit" value="戻る" />
-<input type="submit" value="送信" />
+<input type="button" onclick="history.back()" value="戻る" style="width:100px;height:50px">
+<input type="submit" value="送信" style="width:100px;height:50px" />
 </form>
  
 </body>
