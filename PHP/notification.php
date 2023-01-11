@@ -34,6 +34,7 @@ function updateCheckTimeline($user_id){
 //タイムライン更新
 function getUpdateTimeline($user_id, $update_date){
     list($timeline_id, $user_id2, $food_id, $send_date, $char_body, $reaction_number, $image_rink) = notificationDB.getUpdatechat($user_id, $update_date);
+    $image_data = file_get_contents($image_rink);
     //画像ファイルリンクより画像データと画像名を取得
     notificationDB.updateCheckTime();
     return array($timeline_id, $user_id2, $food_id, $send_date, $char_body, $reaction_number, $image_data, $image_name);
