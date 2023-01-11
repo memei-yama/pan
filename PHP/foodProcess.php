@@ -8,6 +8,7 @@
 <?php
 //画像データを受け取り、文字認識を行うメソッド
 function readDate($image_data){
+    exec($image_data, $food_date);
     //処理
     return $food_date;
 }
