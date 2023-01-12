@@ -27,11 +27,12 @@ function addReaction($timeline_id, $user_id){
     timelineDB.addReaction($timeline_id, $user_id);
 }
 
-//送信先ユーザ検索
+/*送信先ユーザ検索
 function searchSendUser($timeline_id, $user_id){
     list($user_id) = timelineDB.searchSendUser($timeline_id, $user_id);
     return $user_id;
 }
+*/
 
 //リアクションユーザ一覧情報取得
 function getReaction($timeline_id){
