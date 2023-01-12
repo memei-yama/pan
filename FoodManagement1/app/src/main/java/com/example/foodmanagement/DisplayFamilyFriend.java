@@ -29,10 +29,12 @@ public class DisplayFamilyFriend extends AppCompatActivity{
 
         //フレンド登録している人の検索
         // ListViewに表示するためのDATAを作成する
-        int MAXDATA = 3;//表示させる個数はこれが制御している
+        int MAXDATA = 2;//表示させる個数はこれが制御している
+        //String[] friend = new String[MAXDATA];
+        String[] friend = new String[]{"山田花子", "佐藤健太", "田中さとみ"};
         for (int i = 0; i < MAXDATA; i++) {
             data = new HashMap<String, String>();
-            data.put("text1", "タイトル" + i);//このタイトルをユーザ名に変える
+            data.put("text1", friend[i]);//このタイトルをユーザ名に変える
             dataList.add(data);
         }
 
