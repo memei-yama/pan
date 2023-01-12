@@ -8,8 +8,8 @@
 <?php
 //通知モジュール
 function updateCheckUser($user_id){
-    list($ar_id, $user_id2, $family_id) = notificationDB.updateCheckUser($user_id)
-    return array($ar_id, $user_id2, $family_id);
+    list($request_id, $user_id2, $family_id) = notificationDB.updateCheckUser($user_id)
+    return array($request_id, $user_id2, $family_id);
 }
 
 //更新確認モジュール（チャット）
@@ -34,8 +34,8 @@ function updateCheckTimeline($user_id){
 //タイムライン更新
 function getUpdateTimeline($user_id, $update_date){
     list($timeline_id, $user_id2, $food_id, $send_date, $char_body, $reaction_number, $image_rink) = notificationDB.getUpdatechat($user_id, $update_date);
-    $image_data = file_get_contents($image_rink);
     //画像ファイルリンクより画像データと画像名を取得
+    
     notificationDB.updateCheckTime();
     return array($timeline_id, $user_id2, $food_id, $send_date, $char_body, $reaction_number, $image_data, $image_name);
 }
