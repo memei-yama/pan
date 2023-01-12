@@ -17,7 +17,7 @@ public class RegisterFriendSearch2 extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_friend2);
+        setContentView(R.layout.register_family2);
 
         //ユーザ名とユーザIDを表示するテキストのIDを取得する
         view_user_mail = findViewById(R.id.textView8);

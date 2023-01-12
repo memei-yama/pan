@@ -16,7 +16,7 @@ public class RegisterFriendCheck extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_friendcheck);
+        setContentView(R.layout.register_familycheck);
 
         findViewById(R.id.button24).setOnClickListener(this);//キャンセルボタン
         findViewById(R.id.button25).setOnClickListener(this);//申請ボタン
