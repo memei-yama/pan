@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class timelineReaction extends AppCompatActivity{
+public class TimelineReaction extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timeline_reaction);
     }
+    //データベースからgoodの値をとってきてtrueだったらtextviewに表示させる
 }
