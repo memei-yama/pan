@@ -26,7 +26,7 @@ public class Belt extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         Intent home = new Intent(this, Home.class);
         Intent mypage = new Intent(this, Account.class);
-        Intent timeline = new Intent(this, timelineMain.class);
+        Intent timeline = new Intent(this, TimelineMain.class);
         Intent talk = new Intent(this, TalkMain.class);
 
         if (v.getId() == R.id.homeButton && button != 1) {
