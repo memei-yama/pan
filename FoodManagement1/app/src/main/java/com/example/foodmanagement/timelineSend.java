@@ -9,7 +9,7 @@ import android.view.View; //ボタンクリックのライブラリ
 import android.content.Intent; //画面遷移のライブラリ
 import android.widget.EditText;
 
-public class timelineSend extends AppCompatActivity implements View.OnClickListener {
+public class TimelineSend extends AppCompatActivity implements View.OnClickListener {
     private EditText food_name;
     private EditText food_num;
 
@@ -27,7 +27,7 @@ public class timelineSend extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent main = new Intent(this, timelineMain.class);
+        Intent main = new Intent(this, TimelineMain.class);
         if (v.getId() == R.id.button32) {
             String get_food_name = food_name.getText().toString();
             String get_food_num_string = food_num.getText().toString();
