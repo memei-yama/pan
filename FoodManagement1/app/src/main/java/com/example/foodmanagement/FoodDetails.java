@@ -21,9 +21,6 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
         findViewById(R.id.button35).setOnClickListener(this);
         //削除
         findViewById(R.id.button33).setOnClickListener(this);
-
-        //お気に入り
-        //findViewById(R.id.button33).setOnClickListener(this);
     }
 
     //画面遷移
