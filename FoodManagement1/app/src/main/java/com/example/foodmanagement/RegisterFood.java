@@ -12,6 +12,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 
+//賞味or消費
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
 //calender
 import android.app.DatePickerDialog;
 import android.widget.DatePicker;
@@ -33,9 +39,12 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
 
     //変数(テキスト)の設定
     private EditText food_name;
+    private String[] spinnerItems = {
+            "賞味",
+            "消費"
+    };
     private EditText food_date;
     private EditText food_shop;
-    //private EditText food_num;
     private NumberPicker food_num;
     private ImageButton favorite;
 
@@ -48,6 +57,34 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         food_name = (EditText) findViewById(R.id.foodName);
 
         //賞味・消費選択
+        Spinner spinner = findViewById(R.id.spinner);
+
+        // ArrayAdapter
+        ArrayAdapter<String> adapter
+                = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, spinnerItems);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // spinner に adapter をセット
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+            //　アイテムが選択された時
+            @Override
+            public void onItemSelected(AdapterView<?> parent,
+                                       View view, int position, long id) {
+                Spinner spinner = (Spinner)parent;
+                String item = (String)spinner.getSelectedItem();
+                //textView.setText(item);
+            }
+
+            //　アイテムが選択されなかった
+            public void onNothingSelected(AdapterView<?> parent) {
+                //
+            }
+        });
+
 
         //期限　（カレンダー）
         food_date = (EditText) findViewById(R.id.editTextDate);
@@ -81,12 +118,9 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         food_shop = (EditText) findViewById(R.id.shopName);
 
         //個数　（個数選択）
-        //food_num = (EditText) findViewById(R.id.foodNum);
+        food_num = (NumberPicker) findViewById(R.id.foodNum);
 
-        //今コメントアウトしてるものを実装する
-        //food_num = (NumberPicker) findViewById(R.id.foodNum);
-
-        //上限、下限値、初期値設定
+        //個数の上限、下限値、初期値設定
         food_num.setMaxValue(50);
         food_num.setMinValue(1);
         food_num.setValue(1);
