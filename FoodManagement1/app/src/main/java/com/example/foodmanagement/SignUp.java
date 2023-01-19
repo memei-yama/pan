@@ -25,13 +25,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
+    static String final_user_id;
     //変数の定義
     private EditText user_name;
     private EditText user_mail;
     private EditText user_address;
     private EditText user_passwd;
     //API
-    private final String API_URL_PREFIX = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
+     private final String API_URL_PREFIX = "ec2-44-202-142-237.compute-1.amazonaws.com";
+    // private final String API_URL_PREFIX = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 //データベースに登録する処理を書く
                 SignUp.MyAsync asynk = new SignUp.MyAsync(user_name, user_mail,user_address,user_passwd);
                 asynk.execute();
+                //asynk.onPostExecute("yyy");
                 startActivity(register_ok);
             } else {
                 //ユーザ名とメールアドレスとパスワードの一つでもnullだったらエラー画面
@@ -88,6 +91,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
 
     class MyAsync extends AsyncTask<String, Void, String> {
+        //static String final_user_id;
 
         //private final WeakReference<TextView> titleViewReference;
         //private final WeakReference<TextView> dateViewReference;
@@ -153,13 +157,17 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         @Override
         protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
+            //SignUp.final_user_id = "111";
             try {
+                //SignUp.final_user_id = "111";
                 JSONObject json = new JSONObject(result);
-                String user_id = json.getString("user_id");
-                //JSONArray itemsArray = new JSONArray(items);
-                //JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("volumeInfo");
 
-                //String title = bookInfo.getString("title");
+                SignUp.final_user_id = "111";
+                String items = json.getString("user_id");
+                JSONArray itemsArray = new JSONArray(items);
+                JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("user_id");
+                //SignUp.final_user_id = "111";
+                //SignUp.final_user_id = bookInfo.getString("user_id");
                 //String publishedDate = bookInfo.getString("publishedDate");
 
                 //TextView titleView = titleViewReference.get();
