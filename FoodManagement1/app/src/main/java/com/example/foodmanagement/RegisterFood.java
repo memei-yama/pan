@@ -84,7 +84,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         //food_num = (EditText) findViewById(R.id.foodNum);
 
         //今コメントアウトしてるものを実装する
-        food_num = (NumberPicker) findViewById(R.id.foodNum);
+        //food_num = (NumberPicker) findViewById(R.id.foodNum);
 
         //上限、下限値、初期値設定
         food_num.setMaxValue(50);
