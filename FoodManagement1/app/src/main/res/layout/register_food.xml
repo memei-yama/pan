@@ -55,7 +55,7 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
+                    android:layout_marginStart="26dp"
                     android:layout_marginTop="10dp"
                     android:text="食品名:"
                     android:textSize="28sp"
@@ -88,7 +88,7 @@
                     android:id="@+id/textView23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="54dp"
                     android:layout_marginTop="10dp"
                     android:text="期限:"
                     android:textSize="28sp" />
@@ -107,7 +107,7 @@
 
                 <Spinner
                     android:id="@+id/spinner"
-                    android:layout_width="50dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="34dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
@@ -123,7 +123,7 @@
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="54dp"
                     android:layout_marginTop="70dp"
                     android:text="個数:"
                     android:textSize="28sp"
@@ -148,7 +148,7 @@
                     android:id="@+id/shopView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
+                    android:layout_marginStart="26dp"
                     android:text="購入店:"
                     android:textSize="28sp" />
 
