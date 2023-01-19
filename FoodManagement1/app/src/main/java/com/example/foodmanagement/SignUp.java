@@ -3,11 +3,26 @@
 package com.example.foodmanagement;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class SignUp extends AppCompatActivity implements View.OnClickListener{
     //変数の定義
@@ -15,6 +30,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     private EditText user_mail;
     private EditText user_address;
     private EditText user_passwd;
+    //API
+    private final String API_URL_PREFIX = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +76,102 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             if (!get_user_name.equals("") && !get_user_mail.equals("") && !get_user_passwd.equals("")) {
                 //ユーザ名とメールアドレスとパスワードがnullじゃなかった時
                 //データベースに登録する処理を書く
+                SignUp.MyAsync asynk = new SignUp.MyAsync(user_name, user_mail,user_address,user_passwd);
+                asynk.execute();
                 startActivity(register_ok);
             } else {
                 //ユーザ名とメールアドレスとパスワードの一つでもnullだったらエラー画面
                 startActivity(error);
             }
+        }
+    }
+
+
+    class MyAsync extends AsyncTask<String, Void, String> {
+
+        //private final WeakReference<TextView> titleViewReference;
+        //private final WeakReference<TextView> dateViewReference;
+
+        //入力されたユーザ名を取得する
+        String get_user_name = user_name.getText().toString();
+        //入力されたメールアドレスを取得する
+        String get_user_mail = user_mail.getText().toString();
+        //入力された住所を取得する
+        String get_user_address = user_address.getText().toString();
+        //入力されたパスワードを取得する
+        String get_user_passwd = user_passwd.getText().toString();
+
+        public MyAsync(EditText user_name,EditText user_mail,EditText user_address,EditText user_passwd) {
+            //titleViewReference = new WeakReference<TextView>(user_mail);
+            //dateViewReference = new WeakReference<TextView>(user_passwd);
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+            final StringBuilder result = new StringBuilder();
+            Uri.Builder uriBuilder = new Uri.Builder();
+            uriBuilder.scheme("http");
+            uriBuilder.authority(API_URL_PREFIX);
+            uriBuilder.path("/insertUserInfo.php");
+            //uriBuilder.path("/books/v1/volumes");
+            uriBuilder.appendQueryParameter("user_name", get_user_name);
+            uriBuilder.appendQueryParameter("user_mail", get_user_mail);
+            uriBuilder.appendQueryParameter("user_address", get_user_address);
+            uriBuilder.appendQueryParameter("user_passwd", get_user_passwd);
+            //uriBuilder.appendQueryParameter("q", "夏目漱石");
+            final String uriStr = uriBuilder.build().toString();
+
+            try {
+                URL url = new URL(uriStr);
+                HttpURLConnection con = null;
+                con = (HttpURLConnection) url.openConnection();
+                con.setRequestMethod("GET");
+                con.setDoInput(true);
+                con.connect(); //HTTP接続
+
+                final InputStream in = con.getInputStream();
+                final InputStreamReader inReader = new InputStreamReader(in);
+                final BufferedReader bufReader = new BufferedReader(inReader);
+
+                String line = null;
+                while((line = bufReader.readLine()) != null) {
+                    result.append(line);
+                }
+                Log.e("but", result.toString());
+                bufReader.close();
+                inReader.close();
+                in.close();
+            }
+
+            catch(Exception e) { //エラー
+                Log.e("button", e.getMessage());
+            }
+
+            return result.toString(); //onPostExecuteへreturn
+        }
+
+        @Override
+        protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
+            try {
+                JSONObject json = new JSONObject(result);
+                String user_id = json.getString("user_id");
+                //JSONArray itemsArray = new JSONArray(items);
+                //JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("volumeInfo");
+
+                //String title = bookInfo.getString("title");
+                //String publishedDate = bookInfo.getString("publishedDate");
+
+                //TextView titleView = titleViewReference.get();
+                //TextView dateView = dateViewReference.get();
+
+                //titleView.setText(title);
+                //dateView.setText(publishedDate);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }
