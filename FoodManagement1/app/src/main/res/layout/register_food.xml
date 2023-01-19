@@ -55,7 +55,7 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
+                    android:layout_marginStart="26dp"
                     android:layout_marginTop="10dp"
                     android:text="食品名:"
                     android:textSize="28sp"
@@ -88,7 +88,7 @@
                     android:id="@+id/textView23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="54dp"
                     android:layout_marginTop="10dp"
                     android:text="期限:"
                     android:textSize="28sp" />
@@ -107,8 +107,9 @@
 
                 <Spinner
                     android:id="@+id/spinner"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1" />
             </LinearLayout>
@@ -122,7 +123,7 @@
                     android:id="@+id/textView21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="54dp"
                     android:layout_marginTop="70dp"
                     android:text="個数:"
                     android:textSize="28sp"
@@ -147,7 +148,7 @@
                     android:id="@+id/shopView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
+                    android:layout_marginStart="26dp"
                     android:text="購入店:"
                     android:textSize="28sp" />
 
@@ -160,6 +161,34 @@
                     android:text="店舗名"
                     android:textSize="20sp"
                     tools:ignore="MissingConstraints" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_weight="1"
+                    android:text="カテゴリー"
+                    android:textSize="28sp" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName6"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0sp"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="カテゴリー名" />
             </LinearLayout>
 
             <LinearLayout
