@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:targetSandboxVersion="1">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FoodManagement"
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true">
+        <!--android:networkSecurityConfig="@xml/network_security_config"-->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity android:name=".SignUp" >
+        </activity>
+        <activity android:name=".SignUpFin" >
+        </activity>
+        <activity android:name=".SignUpError" >
+        </activity>
+        <activity android:name=".LoginAccount" >
+        </activity>
+        <activity android:name=".LoginError" >
+        </activity>
+        <activity android:name=".LoginError2" >
+        </activity>
+        <activity android:name=".Account" >
+        </activity>
+        <activity android:name=".ViewFamily" >
+        </activity>
+        <activity android:name=".ViewFriend" >
+        </activity>
+        <activity android:name=".Approval" >
+        </activity>
+        <activity android:name=".Belt" >
+        </activity>
+        <activity android:name=".ChatRoom" >
+        </activity>
+        <activity android:name=".DeleteAccount" >
+        </activity>
+        <activity android:name=".DeleteFamily" >
+        </activity>
+        <activity android:name=".DeleteFriend" >
+        </activity>
+        <activity android:name=".DeleteMode" >
+        </activity>
+        <activity android:name=".DisplayFamilyFriend" >
+        </activity>
+        <activity android:name=".Favorite" >
+        </activity>
+        <activity android:name=".FavoriteView" >
+        </activity>
+        <activity android:name=".FoodDelete" >
+        </activity>
+        <activity android:name=".FoodDetails" >
+        </activity>
+        <activity android:name=".FoodNotification" >
+        </activity>
+        <activity android:name=".FoodSearch" >
+        </activity>
+        <activity android:name=".FoodSort" >
+        </activity>
+        <activity android:name=".FoodUpdate" >
+        </activity>
+        <activity android:name=".GetFamilyFriendInfo" >
+        </activity>
+        <activity android:name=".Home" >
+        </activity>
+        <activity android:name=".MemoRec" >
+        </activity>
+        <activity android:name=".MemoSend" >
+        </activity>
+        <activity android:name=".News" >
+        </activity>
+        <activity android:name=".notification" >
+        </activity>
+        <activity android:name=".RecipeSearch" >
+        </activity>
+        <activity android:name=".RegisterFamily" >
+        </activity>
+        <activity android:name=".RegisterFamilyName" >
+        </activity>
+        <activity android:name=".RegisterFamilySearch" >
+        </activity>
+        <activity android:name=".RegisterFamilySearch2" >
+        </activity>
+        <activity android:name=".RegisterFamilyCheck" >
+        </activity>
+        <activity android:name=".RegisterFamilyFin" >
+        </activity>
+        <activity android:name=".RegisterFamilyError" >
+        </activity>
+        <activity android:name=".RegisterFood" >
+        </activity>
+        <activity android:name=".RegisterFoodMenu" >
+        </activity>
+        <activity android:name=".RegisterFoodCamera" >
+        </activity>
+        <activity android:name=".RegisterFriend" >
+        </activity>
+        <activity android:name=".RegisterFriendSearch" >
+        </activity>
+        <activity android:name=".RegisterFriendSearch2" >
+        </activity>
+        <activity android:name=".RegisterFriendCheck" >
+        </activity>
+        <activity android:name=".RegisterFriendFin" >
+        </activity>
+        <activity android:name=".SearchUser" >
+        </activity>
+        <activity android:name=".TalkMain" >
+        </activity>
+        <activity android:name=".TextRec" >
+        </activity>
+        <activity android:name=".TextSend" >
+        </activity>
+        <activity android:name=".TimelineList" >
+        </activity>
+        <activity android:name=".TimelineMain" >
+        </activity>
+        <activity android:name=".TimelineReaction" >
+        </activity>
+        <activity android:name=".TimelineSend" >
+        </activity>
+        <activity android:name=".UpdateFamily" >
+        </activity>
+        <activity android:name=".UpdateUser" >
+        </activity>
+        <activity android:name=".UserNotice" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">FoodManagement</string>
+    <string name="button1">新規登録</string>
+    <string name="button2">ログイン</string>
+
+    <string name="user_passwd">パスワード</string>
+    <string name="user_mail">メールアドレス</string>
+    <string name="user_address">住所</string>
+    <string name="username_txt">ユーザネーム</string>
+
+    <string name="new_user">登録</string>
+    <string name="back_user">戻る</string>
+    <string name="cansel_user">キャンセル</string>
+    <string name="next_user">次へ</string>
+    <string name="login_user">ログイン</string>
+    <string name="kensaku_user">検索</string>
+    <string name="sinsei_user">申請</string>
+
+    <string name="update_user">アカウント更新</string>
+    <string name="family_menu">家族メニュー</string>
+    <string name="friend_menu">フレンドメニュー</string>
+    <string name="delete_user">アカウント削除</string>
+
+    <string name="new_family">家族新規作成</string>
+    <string name="approval_family">家族承認</string>
+    <string name="delete_family">家族削除</string>
+    <string name="name_family">家族</string>
+
+    <string name="new_friend">フレンド登録</string>
+    <string name="approval_friend">フレンド承認</string>
+    <string name="delete_friend">フレンド削除</string>
+    <string name="hyoji_friend">フレンド表示</string>
+</resources>
