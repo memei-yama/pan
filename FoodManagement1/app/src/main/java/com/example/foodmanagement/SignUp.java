@@ -2,6 +2,7 @@
 //新規登録するプログラム
 package com.example.foodmanagement;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -31,9 +32,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     private EditText user_mail;
     private EditText user_address;
     private EditText user_passwd;
-    //API
-     private final String API_URL_PREFIX = "ec2-44-202-142-237.compute-1.amazonaws.com";
-    // private final String API_URL_PREFIX = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +88,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     }
 
 
-    class MyAsync extends AsyncTask<String, Void, String> {
+    public final class MyAsync extends AsyncTask<String, Void, String> {
         //static String final_user_id;
 
         //private final WeakReference<TextView> titleViewReference;
         //private final WeakReference<TextView> dateViewReference;
+
+        //API
+        private final String API_URL_PREFIX = "ec2-54-84-168-166.compute-1.amazonaws.com";
 
         //入力されたユーザ名を取得する
         String get_user_name = user_name.getText().toString();
@@ -139,13 +140,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 final BufferedReader bufReader = new BufferedReader(inReader);
 
                 String line = null;
-                while((line = bufReader.readLine()) != null) {
+                while ((line = bufReader.readLine()) != null) {
                     result.append(line);
                 }
                 Log.e("but", result.toString());
                 bufReader.close();
                 inReader.close();
                 in.close();
+
             }
 
             catch(Exception e) { //エラー
@@ -155,17 +157,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
             return result.toString(); //onPostExecuteへreturn
         }
 
-        @Override
-        protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
-            //SignUp.final_user_id = "111";
-            try {
+        //@Override
+        //protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
+           // SignUp.final_user_id = "111";
+            //try {
                 //SignUp.final_user_id = "111";
-                JSONObject json = new JSONObject(result);
+                //JSONObject json = new JSONObject(result);
 
-                SignUp.final_user_id = "111";
-                String items = json.getString("user_id");
-                JSONArray itemsArray = new JSONArray(items);
-                JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("user_id");
+                //SignUp.final_user_id = "111";
+
+                //SignUp.final_user_id = json.getString("user_id");;
+                //String items = json.getString("user_id");
+                //JSONArray itemsArray = new JSONArray( "[{\"user_id\":\"29\",\"result\":true}]");
+                //JSONArray itemsArray = new JSONArray(items);
+                //JSONObject bookInfo = itemsArray.getJSONObject(0);
+                //SignUp.final_user_id = bookInfo.getString("user_id");
+                //JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("user_id");
                 //SignUp.final_user_id = "111";
                 //SignUp.final_user_id = bookInfo.getString("user_id");
                 //String publishedDate = bookInfo.getString("publishedDate");
@@ -176,10 +183,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 //titleView.setText(title);
                 //dateView.setText(publishedDate);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            //} catch (JSONException e) {
+             //   e.printStackTrace();
+            //}
 
-        }
+        //}
     }
 }

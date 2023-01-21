@@ -29,7 +29,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
     private EditText user_mail;
     private EditText user_passwd;
     //API
-    private final String API_URL_PREFIX = "http://appserver/userLogin?user_id=get_user_mail&user_passwd=get_user_passwd";
+    private final String API_URL_PREFIX = "ec2-54-84-168-166.compute-1.amazonaws.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +93,16 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
 
     class MyAsync extends AsyncTask<String, Void, String> {
 
-        private final WeakReference<TextView> titleViewReference;
-        private final WeakReference<TextView> dateViewReference;
+        //private final WeakReference<TextView> titleViewReference;
+        //private final WeakReference<TextView> dateViewReference;
+        //入力されたメールアドレスを取得する
+        String get_user_mail = user_mail.getText().toString();
+        //入力されたパスワードを取得する
+        String get_user_passwd = user_passwd.getText().toString();
 
         public MyAsync(EditText user_mail,EditText user_passwd) {
-            titleViewReference = new WeakReference<TextView>(user_mail);
-            dateViewReference = new WeakReference<TextView>(user_passwd);
+            //titleViewReference = new WeakReference<TextView>(user_mail);
+            //dateViewReference = new WeakReference<TextView>(user_passwd);
         }
 
 
@@ -106,10 +110,12 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
         protected String doInBackground(String... params) {
             final StringBuilder result = new StringBuilder();
             Uri.Builder uriBuilder = new Uri.Builder();
-            uriBuilder.scheme("https");
+            uriBuilder.scheme("http");
             uriBuilder.authority(API_URL_PREFIX);
-            uriBuilder.path("/books/v1/volumes");
-            uriBuilder.appendQueryParameter("q", "夏目漱石");
+            uriBuilder.path("/serchPasswd.php");
+            uriBuilder.appendQueryParameter("user_id", get_user_mail);
+            uriBuilder.appendQueryParameter("user_passwd", get_user_passwd);
+            //uriBuilder.appendQueryParameter("q", "夏目漱石");
             final String uriStr = uriBuilder.build().toString();
 
             try {
@@ -145,18 +151,18 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
         protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
             try {
                 JSONObject json = new JSONObject(result);
-                String items = json.getString("items");
+                String items = json.getString("result");
                 JSONArray itemsArray = new JSONArray(items);
-                JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("volumeInfo");
+                JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("result");
 
-                String title = bookInfo.getString("title");
-                String publishedDate = bookInfo.getString("publishedDate");
+                //String title = bookInfo.getString("title");
+                //String publishedDate = bookInfo.getString("publishedDate");
 
-                TextView titleView = titleViewReference.get();
-                TextView dateView = dateViewReference.get();
+                //TextView titleView = titleViewReference.get();
+                //TextView dateView = dateViewReference.get();
 
-                titleView.setText(title);
-                dateView.setText(publishedDate);
+                //titleView.setText(title);
+                //dateView.setText(publishedDate);
 
             } catch (JSONException e) {
                 e.printStackTrace();

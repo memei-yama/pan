@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterFamilySearch extends AppCompatActivity implements View.OnClickListener {
     //変数の定義
     private EditText family_mail;
+    TextView view_user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,11 @@ public class RegisterFamilySearch extends AppCompatActivity implements View.OnCl
 
         findViewById(R.id.button20).setOnClickListener(this);//検索ボタン
         findViewById(R.id.button26).setOnClickListener(this);//戻るボタン
+
+        view_user_id = findViewById(R.id.textView2);
+        //view_user_id.setText(SignUp.final_user_id);
+        //String name = "abc";
+        view_user_id.setText(RegisterFamilyName.final_family_name);
     }
 
     //ボタンを押下したら適切な画面に遷移する
