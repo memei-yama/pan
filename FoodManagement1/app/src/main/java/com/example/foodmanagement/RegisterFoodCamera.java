@@ -8,21 +8,96 @@ import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 
+//カメラ読み取りで追加したimport
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.graphics.Camera;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.ResultPoint;
+import com.journeyapps.barcodescanner.BarcodeCallback;
+import com.journeyapps.barcodescanner.BarcodeResult;
+import com.journeyapps.barcodescanner.CompoundBarcodeView;
+import com.journeyapps.barcodescanner.camera.CameraSettings;
+import java.util.List;
+
 
 public class RegisterFoodCamera extends AppCompatActivity {
+    CompoundBarcodeView barcodeView;
+    private String lastResult;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_foodmenu);
 
+        //setContentView(R.layout.register_foodcamera);
 
+        if(ActivityCompat.checkSelfPermission(RegisterFoodCamera.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            String[] permissions = {Manifest.permission.CAMERA};
+            ActivityCompat.requestPermissions(RegisterFoodCamera.this, permissions, 100);
+            return;
+        }
 
-        //バーコード(JANコード)読み取りの処理
+        CameraSetting();
+        readBarcode();
 
+        //読み取れた番号を元に商品名取得までしたいけどAPIの期限切れとかで実装方法難しそう
 
         //読み取りが終わったらRegisterFood.javaに遷移する
-        Intent register_self = new Intent(this, RegisterFood.class);
+        //Intent register_self = new Intent(this, RegisterFood.class);
+        //startActivity(register_self);
+    }
 
-        startActivity(register_self);
+
+
+    private void CameraSetting() {
+        //barcodeView = findViewById(R.id.barcodeView);
+        CameraSettings settings = barcodeView.getBarcodeView().getCameraSettings();
+        barcodeView.getBarcodeView().setCameraSettings(settings);
+        barcodeView.setStatusText("バーコードが読めます");
+        barcodeView.resume();
+        readBarcode();
+    }
+
+    private void readBarcode() {
+        barcodeView.decodeContinuous(new BarcodeCallback() {
+            //final TextView getNumber = findViewById(R.id.getNumber);
+
+            @Override
+            public void barcodeResult(BarcodeResult result) {
+                //このif文で、不必要な連続読みを防ぐ
+                if (result.getText() == null || result.getText().equals(lastResult)) {
+                    return;
+                }
+                //このif文で、読み取られたバーコードがJANコードかどうか判定する
+                if (result.getBarcodeFormat() != BarcodeFormat.EAN_13) {
+                    return;
+                }
+                lastResult = result.getText();
+                Toast.makeText(RegisterFoodCamera.this, "読み取りました", Toast.LENGTH_LONG).show();
+                //getNumber.setText(result.getText());
+            }
+
+            @Override
+            public void possibleResultPoints(List<ResultPoint> resultPoints) {
+            }
+        });
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(RegisterFoodCamera.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+        }
+        CameraSetting();
     }
 
 }
