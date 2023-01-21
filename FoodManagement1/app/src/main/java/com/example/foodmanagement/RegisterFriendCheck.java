@@ -46,6 +46,7 @@ public class RegisterFriendCheck extends AppCompatActivity implements View.OnCli
             startActivity(cancel);
         } else if (v.getId() == R.id.button25) {
             //登録完了画面へ遷移
+            //フレンド登録作業を行う
             startActivity(next);
         }
     }
