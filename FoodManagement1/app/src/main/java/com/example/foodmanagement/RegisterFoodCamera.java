@@ -27,13 +27,17 @@ import com.journeyapps.barcodescanner.camera.CameraSettings;
 import java.util.List;
 
 
-public class RegisterFoodCamera extends AppCompatActivity {
+//public class RegisterFoodCamera extends AppCompatActivity implements View.OnClickListener{
+public class RegisterFoodCamera extends AppCompatActivity{
     CompoundBarcodeView barcodeView;
     private String lastResult;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_foodcamera);
+
+        //次へボタン
+        //findViewById(R.id.button49).setOnClickListener(this);
 
         if(ActivityCompat.checkSelfPermission(RegisterFoodCamera.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             String[] permissions = {Manifest.permission.CAMERA};
@@ -44,13 +48,19 @@ public class RegisterFoodCamera extends AppCompatActivity {
         CameraSetting();
         readBarcode();
 
-        //読み取れた番号を元に商品名取得までしたいけどAPIの期限切れとかで実装方法難しそう
-
         //読み取りが終わったらRegisterFood.javaに遷移する
-        //Intent register_self = new Intent(this, RegisterFood.class);
-        //startActivity(register_self);
-    }
 
+    }
+    /*
+    //画面遷移
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.button49) { //次へボタン
+            Intent register_food = new Intent(this, RegisterFood.class);
+            startActivity(register_food);
+        }
+    }
+    */
 
 
     private void CameraSetting() {
@@ -79,6 +89,11 @@ public class RegisterFoodCamera extends AppCompatActivity {
                 lastResult = result.getText();
                 Toast.makeText(RegisterFoodCamera.this, "読み取りました", Toast.LENGTH_LONG).show();
                 getNumber.setText(result.getText());
+
+                //読み取りが終わったらRegisterFood.javaに遷移する
+                //Intent register_self = new Intent(this, RegisterFood.class);
+                //startActivity(register_self);
+
             }
 
             @Override
