@@ -28,13 +28,13 @@ public class TimelineList extends AppCompatActivity implements View.OnClickListe
         if (!good) {
             heart.setImageResource(R.drawable.color_heart);
             good = true;
-            //データベースに格納
+            //データベースにユーザIDを格納
 
             //goodの値がtrue(リアクションがある)だったらハートマークを消す
         } else if (good) {
             heart.setImageResource(R.drawable.heart);
             good = false;
-            //データベースから削除
+            //データベースからユーザIDを削除
         }
     }
 
