@@ -95,7 +95,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         //private final WeakReference<TextView> dateViewReference;
 
         //API
-        private final String API_URL_PREFIX = "ec2-54-84-168-166.compute-1.amazonaws.com";
+        private final String API_URL_PREFIX = "ec2-3-86-52-40.compute-1.amazonaws.com";
 
         //入力されたユーザ名を取得する
         String get_user_name = user_name.getText().toString();
