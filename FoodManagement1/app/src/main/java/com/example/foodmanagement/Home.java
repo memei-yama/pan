@@ -32,11 +32,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         //favorite_button = findViewById(R.id.button ).setOnClickListener(this);
 
         //削除モード
-        findViewById(R.id.delFood).setOnClickListener(this);
+        //findViewById(R.id.delFood).setOnClickListener(this);
     }
-
-
-    //
 
     @Override
     public void onClick(View v) {
