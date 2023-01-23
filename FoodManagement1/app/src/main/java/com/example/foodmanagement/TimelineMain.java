@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 /*
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -29,14 +32,30 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
 
         //仮データ
         String[] names = {"ゆみ", "はなこ", "たくや", "まさお"};
-
-
+        String[] datas = {"2023/1/14", "2023/1/16", "2023/1/30", "2023/2/3"};
+        String[] nums = {"2", "1", "5", "1"};
+        String[] foods = {"りんご", "玉ねぎ", "みかん", "もも"};
+        int[] images = {R.drawable.people1, R.drawable.people2, R.drawable.people3, R.drawable.people4};
+        //仮データここまで
 
         ArrayList<Map<String, Object>> listData = new ArrayList<>();
         for (int i=0; i < names.length; i++) {
             Map<String, Object> item = new HashMap<>();
-            item.put("displayUser1", names[i]);
+            item.put("tl_name", names[i]);
+            item.put("tl_data", datas[i]);
+            item.put("tl_num", nums[i]);
+            item.put("food", foods[i]);
+            item.put("tlimageView", images[i]);
             listData.add(item);
+        }
+
+        //ListViewにデータをセット
+        ListView list = findViewById(R.id.timelineList);
+        list.setAdapter(new SimpleAdapter(
+                this, listData, R.layout.list_tl,
+                new String[] {"tl_name", "tl_data", "tl_num", "food", "tlimageView"},
+                new int[] {R.id.tl_name, R.id.tl_data, R.id.tl_num, R.id.food, R.id.tlimageView}
+        ));
 
         //AsyncTaskClass task = new AsyncTaskClass();
         //task.execute("");
@@ -49,8 +68,6 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
-    //データベースからTimelineListを取得しtextviewに表示させる
 /*
     public class AsyncTaskClass extends AsyncTask<String, String, String> {
         @Override
