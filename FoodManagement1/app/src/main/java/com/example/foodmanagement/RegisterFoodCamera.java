@@ -33,8 +33,7 @@ public class RegisterFoodCamera extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //setContentView(R.layout.register_foodcamera);
+        setContentView(R.layout.register_foodcamera);
 
         if(ActivityCompat.checkSelfPermission(RegisterFoodCamera.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             String[] permissions = {Manifest.permission.CAMERA};
@@ -55,7 +54,7 @@ public class RegisterFoodCamera extends AppCompatActivity {
 
 
     private void CameraSetting() {
-        //barcodeView = findViewById(R.id.barcodeView);
+        barcodeView = findViewById(R.id.barcodeView);
         CameraSettings settings = barcodeView.getBarcodeView().getCameraSettings();
         barcodeView.getBarcodeView().setCameraSettings(settings);
         barcodeView.setStatusText("バーコードが読めます");
@@ -65,7 +64,7 @@ public class RegisterFoodCamera extends AppCompatActivity {
 
     private void readBarcode() {
         barcodeView.decodeContinuous(new BarcodeCallback() {
-            //final TextView getNumber = findViewById(R.id.getNumber);
+            final TextView getNumber = findViewById(R.id.getNumber);
 
             @Override
             public void barcodeResult(BarcodeResult result) {
@@ -79,7 +78,7 @@ public class RegisterFoodCamera extends AppCompatActivity {
                 }
                 lastResult = result.getText();
                 Toast.makeText(RegisterFoodCamera.this, "読み取りました", Toast.LENGTH_LONG).show();
-                //getNumber.setText(result.getText());
+                getNumber.setText(result.getText());
             }
 
             @Override

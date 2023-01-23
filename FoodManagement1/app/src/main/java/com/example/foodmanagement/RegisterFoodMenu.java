@@ -25,7 +25,7 @@ public class RegisterFoodMenu extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         //今はどちらもRegisterFoodに遷移するようにしている
-        Intent register_camera = new Intent(this, RegisterFood.class);
+        Intent register_camera = new Intent(this, RegisterFoodCamera.class);
         Intent register_self = new Intent(this, RegisterFood.class);
 
 
