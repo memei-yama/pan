@@ -174,10 +174,6 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
             //エラー画面に
             startActivity(home);
         }
-
-
-
-
     }
 
 
