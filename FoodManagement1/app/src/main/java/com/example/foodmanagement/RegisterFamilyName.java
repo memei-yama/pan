@@ -89,7 +89,7 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
         //private final WeakReference<TextView> dateViewReference;
 
         //API
-        private final String API_URL_PREFIX = "ec2-54-84-168-166.compute-1.amazonaws.com";
+        private final String API_URL_PREFIX = "ec2-3-95-224-49.compute-1.amazonaws.com";
 
         //入力されたユーザ名を取得する
         String get_family_name = family_name.getText().toString();
@@ -119,7 +119,6 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
                 con = (HttpURLConnection) url.openConnection();
                 con.setRequestMethod("GET");
                 con.setDoInput(true);
-                RegisterFamilyName.final_family_name = get_family_name;
                 con.connect(); //HTTP接続
 
                 final InputStream in = con.getInputStream();

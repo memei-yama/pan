@@ -29,7 +29,7 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
     private EditText user_mail;
     private EditText user_passwd;
     //API
-    private final String API_URL_PREFIX = "ec2-54-84-168-166.compute-1.amazonaws.com";
+    private final String API_URL_PREFIX = "ec2-3-95-224-49.compute-1.amazonaws.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,13 +147,13 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
             return result.toString(); //onPostExecuteへreturn
         }
 
-        @Override
-        protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
-            try {
-                JSONObject json = new JSONObject(result);
-                String items = json.getString("result");
-                JSONArray itemsArray = new JSONArray(items);
-                JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("result");
+        //@Override
+        //protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
+            //try {
+                //JSONObject json = new JSONObject(result);
+                //String items = json.getString("result");
+                //JSONArray itemsArray = new JSONArray(items);
+                //JSONObject bookInfo = itemsArray.getJSONObject(0).getJSONObject("result");
 
                 //String title = bookInfo.getString("title");
                 //String publishedDate = bookInfo.getString("publishedDate");
@@ -164,10 +164,10 @@ public class LoginAccount extends AppCompatActivity implements View.OnClickListe
                 //titleView.setText(title);
                 //dateView.setText(publishedDate);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            //} catch (JSONException e) {
+              //  e.printStackTrace();
+            //}
 
-        }
+        //}
     }
 }

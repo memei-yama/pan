@@ -95,7 +95,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         //private final WeakReference<TextView> dateViewReference;
 
         //API
-        private final String API_URL_PREFIX = "ec2-54-175-21-30.compute-1.amazonaws.com";
+        private final String API_URL_PREFIX = "ec2-3-95-224-49.compute-1.amazonaws.com";
         //private final String API_URL_PREFIX = "www.google.com";
 
         //入力されたユーザ名を取得する
@@ -115,7 +115,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         @Override
         protected String doInBackground(String... params) {
-            int i = 3;
             final StringBuilder result = new StringBuilder();
             Uri.Builder uriBuilder = new Uri.Builder();
             uriBuilder.scheme("http");
@@ -153,7 +152,6 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 bufReader.close();
                 inReader.close();
                 in.close();
-
             }
 
             catch(Exception e) { //エラー
@@ -165,6 +163,14 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         //@Override
         //protected void onPostExecute(String result) { //doInBackgroundが終わると呼び出される
+          //  boolean correct = result.contains("user_name");
+           // SignUp.final_user_id = "aaa";
+            //if (correct == true) {
+              //  int index = result.indexOf("user_name");
+               // int index_plus = index + 12;
+                //SignUp.final_user_id = "aaa";
+                //SignUp.final_user_id = result.substring(index_plus);
+            //}
            // SignUp.final_user_id = "111";
             //try {
                 //SignUp.final_user_id = "111";
@@ -173,7 +179,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 //SignUp.final_user_id = "111";
 
                 //SignUp.final_user_id = json.getString("user_id");;
-                //  String items = json.getString("user_id");
+                //String items = json.getString("user_id");
                 //JSONArray itemsArray = new JSONArray( "[{\"user_id\":\"29\",\"result\":true}]");
                 //JSONArray itemsArray = new JSONArray(items);
                 //JSONObject bookInfo = itemsArray.getJSONObject(0);
@@ -190,7 +196,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 //dateView.setText(publishedDate);
 
             //} catch (JSONException e) {
-             //   e.printStackTrace();
+              //  e.printStackTrace();
             //}
 
         //}
