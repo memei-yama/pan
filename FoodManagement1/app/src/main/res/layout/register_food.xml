@@ -93,25 +93,33 @@
                     android:text="期限:"
                     android:textSize="28sp" />
 
-                <EditText
-                    android:id="@+id/editTextDate"
-                    android:layout_width="132dp"
-                    android:layout_height="wrap_content"
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
                     android:layout_marginStart="1dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginEnd="75dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="123dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="50dp"
                     android:ems="10"
                     android:focusable="false"
                     android:inputType="date"
                     android:textSize="20sp"
                     tools:ignore="MissingConstraints" />
-
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="34dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
