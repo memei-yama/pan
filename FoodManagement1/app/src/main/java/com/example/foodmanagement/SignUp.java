@@ -95,7 +95,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         //private final WeakReference<TextView> dateViewReference;
 
         //API
-        private final String API_URL_PREFIX = "ec2-3-86-52-40.compute-1.amazonaws.com";
+        private final String API_URL_PREFIX = "ec2-54-175-21-30.compute-1.amazonaws.com";
+        //private final String API_URL_PREFIX = "www.google.com";
 
         //入力されたユーザ名を取得する
         String get_user_name = user_name.getText().toString();
@@ -114,17 +115,22 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
 
         @Override
         protected String doInBackground(String... params) {
+            int i = 3;
             final StringBuilder result = new StringBuilder();
             Uri.Builder uriBuilder = new Uri.Builder();
             uriBuilder.scheme("http");
             uriBuilder.authority(API_URL_PREFIX);
-            uriBuilder.path("/insertUserInfo.php");
+            //uriBuilder.path("search");
+            uriBuilder.path("insertUserInfo.php");
             //uriBuilder.path("/books/v1/volumes");
+            //uriBuilder.appendQueryParameter("client", "firefox-b-d");
+            //uriBuilder.appendQueryParameter("user_id", "3");
             uriBuilder.appendQueryParameter("user_name", get_user_name);
             uriBuilder.appendQueryParameter("user_mail", get_user_mail);
             uriBuilder.appendQueryParameter("user_address", get_user_address);
             uriBuilder.appendQueryParameter("user_passwd", get_user_passwd);
             //uriBuilder.appendQueryParameter("q", "夏目漱石");
+            //SignUp.final_user_id= uriBuilder.build().toString();
             final String uriStr = uriBuilder.build().toString();
 
             try {
@@ -167,7 +173,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                 //SignUp.final_user_id = "111";
 
                 //SignUp.final_user_id = json.getString("user_id");;
-                //String items = json.getString("user_id");
+                //  String items = json.getString("user_id");
                 //JSONArray itemsArray = new JSONArray( "[{\"user_id\":\"29\",\"result\":true}]");
                 //JSONArray itemsArray = new JSONArray(items);
                 //JSONObject bookInfo = itemsArray.getJSONObject(0);

@@ -33,6 +33,11 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
 
         findViewById(R.id.button19).setOnClickListener(this);//次へボタン
         findViewById(R.id.button18).setOnClickListener(this);//戻るボタン
+
+        findViewById(R.id.homeButton).setOnClickListener(this);//ホームボタン
+        findViewById(R.id.mypageButton).setOnClickListener(this);//マイページボタン
+        findViewById(R.id.timelineButton).setOnClickListener(this);//タイムラインボタン
+        findViewById(R.id.messageButton).setOnClickListener(this);//メッセージボタン
     }
 
     //ボタンを押下したら適切な画面に遷移する
@@ -41,6 +46,12 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
         //画面遷移用
         Intent next = new Intent(this, RegisterFamilySearch.class);
         Intent cancel = new Intent(this, ViewFamily.class);
+
+        //ベルトの遷移用
+        Intent home = new Intent(this, Home.class);
+        Intent mypage = new Intent(this, Account.class);
+        Intent timeline = new Intent(this, TimelineMain.class);
+        Intent talk = new Intent(this, TalkMain.class);
 
         if (v.getId() == R.id.button19) {
             //入力されたユーザ名を取得する
@@ -53,6 +64,21 @@ public class RegisterFamilyName extends AppCompatActivity implements View.OnClic
         } else if (v.getId() == R.id.button18) {
             //家族メニュー画面へ遷移
             startActivity(cancel);
+        } else if (v.getId() == R.id.homeButton) {
+            //アカウント削除画面へ遷移
+            startActivity(home);
+        }
+        else if (v.getId() == R.id.mypageButton) {
+            //アカウント削除画面へ遷移
+            startActivity(mypage);
+        }
+        else if (v.getId() == R.id.timelineButton) {
+            //アカウント削除画面へ遷移
+            startActivity(timeline);
+        }
+        else if (v.getId() == R.id.messageButton) {
+            //アカウント削除画面へ遷移
+            startActivity(talk);
         }
     }
 
