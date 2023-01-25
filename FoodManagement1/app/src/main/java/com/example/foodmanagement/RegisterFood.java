@@ -6,8 +6,11 @@ package com.example.foodmanagement;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +37,11 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.view.ViewGroup;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 
 public class RegisterFood extends AppCompatActivity implements View.OnClickListener{
@@ -181,13 +189,15 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         Intent message = new Intent(this, Message.class);
 
 
-        if (v.getId() == R.id.button48){ //登録
+        if (v.getId() == R.id.button38){ //登録
             home.putExtra("get_food_name", food_name.getText().toString());
             home.putExtra("get_food_date", food_date.getText().toString());
             home.putExtra("get_spinnerItems", spinnerItems.toString());
             home.putExtra("get_food_shop", food_shop.getText().toString());
             home.putExtra("get_food_num", food_num.toString());
             home.putExtra("get_category", category.getText().toString());
+            RegisterFood.MyAsync asynk = new RegisterFood.MyAsync();
+            asynk.execute();
             startActivity(home);
 
         } else if (v.getId() == R.id.button37){ //戻る
@@ -208,6 +218,59 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public final class MyAsync extends AsyncTask<String, Void, String> {
+
+        //API
+        private final String API_URL_PREFIX = "ec2-52-90-109-193.compute-1.amazonaws.com";
+
+        public MyAsync() {
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+            final StringBuilder result = new StringBuilder();
+            Uri.Builder uriBuilder = new Uri.Builder();
+            uriBuilder.scheme("http");
+            uriBuilder.authority(API_URL_PREFIX);
+            uriBuilder.path("insertFoodInfo.php");
+            uriBuilder.appendQueryParameter("food_name", "りんご");
+            uriBuilder.appendQueryParameter("food_date", "2023/1/30");
+            uriBuilder.appendQueryParameter("date_select", "aaa");
+            uriBuilder.appendQueryParameter("added_date", "2023/1/25");
+            uriBuilder.appendQueryParameter("shop_name", "ヴィアン");
+            uriBuilder.appendQueryParameter("food_number", "1");
+            uriBuilder.appendQueryParameter("category_id", "1");
+            uriBuilder.appendQueryParameter("user_id", "111");
+            final String uriStr = uriBuilder.build().toString();
+
+            try {
+                URL url = new URL(uriStr);
+                HttpURLConnection con = null;
+                con = (HttpURLConnection) url.openConnection();
+                con.setRequestMethod("GET");
+                con.setDoInput(true);
+                con.connect(); //HTTP接続
+
+                final InputStream in = con.getInputStream();
+                final InputStreamReader inReader = new InputStreamReader(in);
+                final BufferedReader bufReader = new BufferedReader(inReader);
+
+                String line = null;
+                while ((line = bufReader.readLine()) != null) {
+                    result.append(line);
+                }
+                Log.e("but", result.toString());
+                bufReader.close();
+                inReader.close();
+                in.close();
+            } catch (Exception e) { //エラー
+                Log.e("button", e.getMessage());
+            }
+
+            return result.toString(); //onPostExecuteへreturn
+        }
+    }
 
 
 }
