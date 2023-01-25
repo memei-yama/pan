@@ -9,8 +9,17 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.content.Intent;
+import android.widget.GridView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity implements View.OnClickListener{
+
+    private final String[]  sample ={
+            "りんご", "じゃがいも"
+    };
+
+    //private final List<Integer> imgList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +46,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
 
         //表示
-        //mGridView = (GridView)findViewById(R.id.food_grid);
+        //GridView = (GridView)findViewById(R.id.food_grid);
 
 
         //RegisterFoodからの値を取得
@@ -71,9 +80,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         //どのボタンが押下されたか、それによる画面遷移
         if (v.getId() == R.id.regFood){ //食品登録ボタン
             startActivity(food_register_menu);
+
         } else if (v.getId() == R.id.delFood){ //削除モードボタン
             startActivity(delete_mode);
 
+            //ベルトの遷移
         }else if (v.getId() == R.id.homeButton) { //ホームボタン
             startActivity(home);
 
