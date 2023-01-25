@@ -22,17 +22,24 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         //食品を選択（食品詳細表示）
 
-        //検索
-        //search_button = findViewById(R.id.button ).setOnClickListener(this);
-
-        //並べ替え
-        //sort_button = findViewById(R.id.button ).setOnClickListener(this);
-
-        //お気に入り
-        //favorite_button = findViewById(R.id.button ).setOnClickListener(this);
-
         //削除モード
         //findViewById(R.id.delFood).setOnClickListener(this);
+
+
+        //表示
+        //mGridView = (GridView)findViewById(R.id.food_grid);
+
+
+        //RegisterFoodからの値を取得
+        Intent intent = getIntent();
+        String food_name = intent.getStringExtra("get_food_name");
+        String food_date = intent.getStringExtra("get_food_date");
+        String spinnerItems = intent.getStringExtra("get_spinnerItems");
+        String food_shop = intent.getStringExtra("get_food_shop");
+        String food_num = intent.getStringExtra("get_food_num");
+        String category = intent.getStringExtra("get_category");
+
+
     }
 
     @Override
