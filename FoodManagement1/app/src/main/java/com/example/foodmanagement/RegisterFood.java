@@ -7,6 +7,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
+import android.os.Message;
 import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
     };
     private EditText food_date;
     private EditText food_shop;
+    private EditText category;
     private NumberPicker food_num;
     private ImageButton favorite;
 
@@ -117,6 +119,9 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         //購入店舗（テキスト）
         food_shop = (EditText) findViewById(R.id.shopName);
 
+        //カテゴリー
+        category = (EditText) findViewById(R.id.editTextTextPersonName6);
+
         //個数　（個数選択）
         food_num = (NumberPicker) findViewById(R.id.foodNum);
 
@@ -133,6 +138,16 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button37).setOnClickListener(this);
         //登録ボタン
         findViewById(R.id.button38).setOnClickListener(this);
+
+        //ホームボタン
+        findViewById(R.id.homeButton).setOnClickListener(this);
+        //マイページ
+        findViewById(R.id.mypageButton).setOnClickListener(this);
+        //タイムライン
+        findViewById(R.id.timelineButton).setOnClickListener(this);
+        //メッセージ
+        findViewById(R.id.messageButton).setOnClickListener(this);
+
     }
 
     //ハートマークの画像変更
@@ -158,22 +173,39 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
+
+        Intent register_menu = new Intent(this, RegisterFoodMenu.class);
         Intent home = new Intent(this, Home.class);
-
-        String get_food_name = food_name.getText().toString();
-        //String get_food_name = food_name.getText().toString();
-        //String get_food_name = food_name.getText().toString();
-        String get_food_shop = food_shop.getText().toString();
+        Intent mypage = new Intent(this, Account.class);
+        Intent timeline = new Intent(this, TimelineMain.class);
+        Intent message = new Intent(this, Message.class);
 
 
-        //food_nameとfood_dateの確認
-        if(!get_food_name.equals("") ){
-            //データベースに登録する処理
+        if (v.getId() == R.id.button48){ //登録
+            home.putExtra("get_food_name", food_name.getText().toString());
+            home.putExtra("get_food_date", food_date.getText().toString());
+            home.putExtra("get_spinnerItems", spinnerItems.toString());
+            home.putExtra("get_food_shop", food_shop.getText().toString());
+            home.putExtra("get_food_num", food_num.toString());
+            home.putExtra("get_category", category.getText().toString());
             startActivity(home);
-        }else{
-            //エラー画面に
+
+        } else if (v.getId() == R.id.button37){ //戻る
+            startActivity(register_menu);
+
+        }else if (v.getId() == R.id.homeButton) { //ホームボタン
             startActivity(home);
+
+        }else if (v.getId() == R.id.mypageButton) { //マイページボタン
+            startActivity(mypage);
+
+        }else if (v.getId() == R.id.timelineButton) { //タイムラインボタン
+            startActivity(timeline);
+
+        }else if (v.getId() == R.id.messageButton) { //メッセージボタン
+            startActivity(message);
         }
+
     }
 
 
