@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class TimelineList extends AppCompatActivity implements View.OnClickListener{
+public class TimelineList extends AppCompatActivity{
     boolean good = false;
     //データベースからgoodの値を取得
 
@@ -17,9 +17,10 @@ public class TimelineList extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_tl);
 
-        findViewById(R.id.heartButton).setOnClickListener(this); //ハートボタン
+        //findViewById(R.id.heartButton).setOnClickListener(this); //ハートボタン
     }
 
+    /*
     @Override
     public void onClick(View v){
         ImageButton heart = findViewById(R.id.heartButton);
@@ -37,6 +38,8 @@ public class TimelineList extends AppCompatActivity implements View.OnClickListe
             //データベースからユーザIDを削除
         }
     }
+
+     */
 
 }
 
