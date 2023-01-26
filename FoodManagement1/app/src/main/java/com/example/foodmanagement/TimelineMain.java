@@ -27,7 +27,7 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
         String[] datas = {"2023/1/14", "2023/1/16", "2023/1/30", "2023/2/3"};
         String[] nums = {"2", "1", "5", "1"};
         String[] foods = {"りんご", "玉ねぎ", "みかん", "もも"};
-        int[] images = {R.drawable.people1, R.drawable.people2, R.drawable.people3, R.drawable.people4};
+        int[] images = {R.drawable.tl_apple, R.drawable.tl_onion, R.drawable.tl_orange, R.drawable.tl_peach};
         //仮データここまで
 
         ArrayList<Map<String, Object>> listData = new ArrayList<>();
