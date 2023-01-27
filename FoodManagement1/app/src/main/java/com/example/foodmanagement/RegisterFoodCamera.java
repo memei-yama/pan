@@ -27,8 +27,8 @@ import com.journeyapps.barcodescanner.camera.CameraSettings;
 import java.util.List;
 
 
-//public class RegisterFoodCamera extends AppCompatActivity implements View.OnClickListener{
-public class RegisterFoodCamera extends AppCompatActivity{
+public class RegisterFoodCamera extends AppCompatActivity implements View.OnClickListener{
+//public class RegisterFoodCamera extends AppCompatActivity{
     CompoundBarcodeView barcodeView;
     private String lastResult;
 
@@ -36,8 +36,8 @@ public class RegisterFoodCamera extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_foodcamera);
 
-        //次へボタン
-        //findViewById(R.id.button49).setOnClickListener(this);
+        //入力ボタン
+        findViewById(R.id.button49).setOnClickListener(this);
 
         if(ActivityCompat.checkSelfPermission(RegisterFoodCamera.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             String[] permissions = {Manifest.permission.CAMERA};
@@ -51,20 +51,20 @@ public class RegisterFoodCamera extends AppCompatActivity{
         //読み取りが終わったらRegisterFood.javaに遷移する
 
     }
-    /*
+
     //画面遷移
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.button49) { //次へボタン
             //動画用
-            private String food_name = "こっぺぱん"
+             String food_name = "こっぺぱん";
 
             Intent register_food = new Intent(this, RegisterFood.class);
-            registe_food.putExtra("get_food_name", food_name.getText().toString());
+            register_food.putExtra("get_food_name", food_name);
             startActivity(register_food);
         }
     }
-    */
+
 
 
     private void CameraSetting() {
