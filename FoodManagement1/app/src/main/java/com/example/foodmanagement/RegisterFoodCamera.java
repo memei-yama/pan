@@ -56,7 +56,11 @@ public class RegisterFoodCamera extends AppCompatActivity{
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.button49) { //次へボタン
+            //動画用
+            private String food_name = "こっぺぱん"
+
             Intent register_food = new Intent(this, RegisterFood.class);
+            registe_food.putExtra("get_food_name", food_name.getText().toString());
             startActivity(register_food);
         }
     }
