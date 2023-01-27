@@ -58,13 +58,14 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
     private NumberPicker food_num;
     private ImageButton favorite;
 
+    private String spinner_item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_food);
 
         //RegisterFoodCameraから食品名を取得
-        //動画用）
         Intent intent = getIntent();
         String get_food_name = intent.getStringExtra("get_food_name");
 
@@ -72,6 +73,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         //食品名　（テキスト）
         food_name = (EditText) findViewById(R.id.foodName);
 
+        //カメラから遷移してきたときの判定
         if(get_food_name != null) {
             food_name.setText(get_food_name);
         }
@@ -95,7 +97,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
             public void onItemSelected(AdapterView<?> parent,
                                        View view, int position, long id) {
                 Spinner spinner = (Spinner)parent;
-                String item = (String)spinner.getSelectedItem();
+                spinner_item = (String)spinner.getSelectedItem();
                 //textView.setText(item);
             }
 
@@ -202,9 +204,9 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.button38){ //登録
             home.putExtra("get_food_name", food_name.getText().toString());
             home.putExtra("get_food_date", food_date.getText().toString());
-            home.putExtra("get_spinnerItems", spinnerItems.toString());
+            home.putExtra("get_spinnerItems", spinnerItems);
             home.putExtra("get_food_shop", food_shop.getText().toString());
-            home.putExtra("get_food_num", food_num.toString());
+            home.putExtra("get_food_num", food_num.getValue() + "");
             home.putExtra("get_category", category.getText().toString());
             RegisterFood.MyAsync asynk = new RegisterFood.MyAsync();
             asynk.execute();
