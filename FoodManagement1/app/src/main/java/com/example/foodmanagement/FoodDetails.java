@@ -41,21 +41,19 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
         food_num = (TextView) findViewById(R.id.foodNum6);
 
         //賞味or消費のTextView
-        //spinner_item = (TextView) findViewById(R.id.  );
-
+        spinner_item = (TextView) findViewById(R.id.textView36);
         //カテゴリー名のTextView
-        //category = (TextView) findViewById(R.id.  );
+        category = (TextView) findViewById(R.id.textView35);
 
 
         //RegisterFood ⇒ Home ⇒ Details で受け取った値をtextviewにセット
-        //一連のながれの作業をあと賞味消費とカテゴリーもまなちゃんがファイル変更次第追加
         food_name.setText(details_food_name);
         food_date.setText(details_food_date);
         food_shop.setText(details_food_shop);
         food_num.setText(details_food_num);
 
-        //spinner_item.setText(details_spinnerItems);
-        //category.setText(details_category);
+        spinner_item.setText(details_spinnerItems);
+        category.setText(details_category);
 
 
 
@@ -80,10 +78,10 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
 
             home.putExtra("get_food_name", food_name.getText().toString());
             home.putExtra("get_food_date", food_date.getText().toString());
-            //home.putExtra("get_spinnerItems", spinnerItems);
+            home.putExtra("get_spinnerItems", spinner_item.getText().toString());
             home.putExtra("get_food_shop", food_shop.getText().toString());
             home.putExtra("get_food_num", food_num.getText().toString());
-            //home.putExtra("get_category", category.getText().toString());
+            home.putExtra("get_category", category.getText().toString());
 
             startActivity(home);
         }else if (v.getId() == R.id.button35){
