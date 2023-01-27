@@ -63,8 +63,18 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_food);
 
+        //RegisterFoodCameraから食品名を取得
+        //動画用）
+        Intent intent = getIntent();
+        String get_food_name = intent.getStringExtra("get_food_name");
+
+
         //食品名　（テキスト）
         food_name = (EditText) findViewById(R.id.foodName);
+
+        if(get_food_name != null) {
+            food_name.setText(get_food_name);
+        }
 
         //賞味・消費選択
         Spinner spinner = findViewById(R.id.spinner);
