@@ -82,7 +82,7 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
             home.putExtra("get_food_date", food_date.getText().toString());
             //home.putExtra("get_spinnerItems", spinnerItems);
             home.putExtra("get_food_shop", food_shop.getText().toString());
-            home.putExtra("get_food_num", food_num.toString() + "");
+            home.putExtra("get_food_num", food_num.getText().toString());
             //home.putExtra("get_category", category.getText().toString());
 
             startActivity(home);
