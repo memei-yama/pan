@@ -204,7 +204,7 @@ public class RegisterFood extends AppCompatActivity implements View.OnClickListe
         if (v.getId() == R.id.button38){ //登録
             home.putExtra("get_food_name", food_name.getText().toString());
             home.putExtra("get_food_date", food_date.getText().toString());
-            home.putExtra("get_spinnerItems", spinnerItems);
+            home.putExtra("get_spinnerItems", spinner_item);
             home.putExtra("get_food_shop", food_shop.getText().toString());
             home.putExtra("get_food_num", food_num.getValue() + "");
             home.putExtra("get_category", category.getText().toString());
