@@ -21,10 +21,29 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
     //private final List<Integer> imgList = new ArrayList<>();
 
+    //値の受け取り用
+    private String home_food_name;
+    private String home_food_date;
+    private String home_spinnerItems;
+    private String home_food_shop;
+    private String home_food_num;
+    private String home_category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_grid); //xmlファイル名変更
+
+        //RegisterFood.javaから値の受け取り
+        Intent intent = getIntent();
+
+        home_food_name = intent.getStringExtra("get_food_name");
+        home_food_date = intent.getStringExtra("get_food_date");
+        home_spinnerItems = intent.getStringExtra("get_spinnerItems");
+        home_food_shop = intent.getStringExtra("get_food_shop");
+        home_food_num = intent.getStringExtra("get_food_num");
+        home_category = intent.getStringExtra("get_category");
+
 
         //各種ボタン設定
         //食品登録
@@ -33,7 +52,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         //食品を選択（食品詳細表示）
 
         //削除モード
-        //findViewById(R.id.delFood).setOnClickListener(this);
+        findViewById(R.id.delFood).setOnClickListener(this);
 
         //ホームボタン
         findViewById(R.id.homeButton).setOnClickListener(this);
@@ -47,17 +66,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         //表示
         //GridView = (GridView)findViewById(R.id.food_grid);
-
-
-        //RegisterFoodからの値を取得
-        Intent intent = getIntent();
-
-        String food_name = intent.getStringExtra("get_food_name");
-        String food_date = intent.getStringExtra("get_food_date");
-        String spinnerItems = intent.getStringExtra("get_spinnerItems");
-        String food_shop = intent.getStringExtra("get_food_shop");
-        String food_num = intent.getStringExtra("get_food_num");
-        String category = intent.getStringExtra("get_category");
 
 
     }
@@ -82,7 +90,19 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
             startActivity(food_register_menu);
 
         } else if (v.getId() == R.id.delFood){ //削除モードボタン
-            startActivity(delete_mode);
+            //startActivity(delete_mode);
+
+            //食品詳細用
+            //FoodDetails.javaへの受け渡し用
+            food_details.putExtra("get_food_name", home_food_name);
+            food_details.putExtra("get_food_date", home_food_date);
+            food_details.putExtra("get_spinnerItems", home_spinnerItems);
+            food_details.putExtra("get_food_shop", home_food_shop);
+            food_details.putExtra("get_food_num", home_food_num);
+            food_details.putExtra("get_category", home_category);
+
+            startActivity(food_details); //今は削除モードを押すと食品詳細が出るようになってる
+
 
             //ベルトの遷移
         }else if (v.getId() == R.id.homeButton) { //ホームボタン
