@@ -4,6 +4,8 @@
 package com.example.foodmanagement;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Message;
 import android.view.View;
 import android.content.Intent;
 import android.os.Bundle;
@@ -64,6 +66,15 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
         findViewById(R.id.button35).setOnClickListener(this);
         //削除
         findViewById(R.id.button33).setOnClickListener(this);
+
+        //ホームボタン
+        findViewById(R.id.homeButton).setOnClickListener(this);
+        //マイページ
+        findViewById(R.id.mypageButton).setOnClickListener(this);
+        //タイムライン
+        findViewById(R.id.timelineButton).setOnClickListener(this);
+        //メッセージ
+        findViewById(R.id.messageButton).setOnClickListener(this);
     }
 
     //画面遷移
@@ -72,6 +83,11 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
         Intent home = new Intent(this, Home.class);
         Intent food_update = new Intent(this, FoodUpdate.class);
         Intent food_delete = new Intent(this, FoodDelete.class);
+
+        Intent mypage = new Intent(this, Account.class);
+        Intent timeline = new Intent(this, TimelineMain.class);
+        Intent message = new Intent(this, Message.class);
+
 
         if (v.getId() == R.id.button36){
             //ホーム画面
@@ -84,11 +100,19 @@ public class FoodDetails extends AppCompatActivity implements View.OnClickListen
             home.putExtra("get_category", category.getText().toString());
 
             startActivity(home);
-        }else if (v.getId() == R.id.button35){
-            //食品更新
-            startActivity(food_update);
-        }else if (v.getId() == R.id.button33){
-            startActivity(food_delete);
+
+        //ベルトの遷移
+        }else if (v.getId() == R.id.homeButton) { //ホームボタン
+            startActivity(home);
+
+        }else if (v.getId() == R.id.mypageButton) { //マイページボタン
+            startActivity(mypage);
+
+        }else if (v.getId() == R.id.timelineButton) { //タイムラインボタン
+            startActivity(timeline);
+
+        }else if (v.getId() == R.id.messageButton) { //メッセージボタン
+            startActivity(message);
         }
 
     }
