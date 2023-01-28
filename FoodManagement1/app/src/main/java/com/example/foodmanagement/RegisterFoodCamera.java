@@ -57,7 +57,7 @@ public class RegisterFoodCamera extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         if (v.getId() == R.id.button49) { //次へボタン
             //動画用
-             String food_name = "こっぺぱん";
+             String food_name = "玄米茶";
 
             Intent register_food = new Intent(this, RegisterFood.class);
             register_food.putExtra("get_food_name", food_name);
