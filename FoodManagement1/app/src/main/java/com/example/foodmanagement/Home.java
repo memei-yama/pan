@@ -9,17 +9,12 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.content.Intent;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Home extends AppCompatActivity implements View.OnClickListener{
-
-    private final String[]  sample ={
-            "りんご", "じゃがいも"
-    };
-
-    //private final List<Integer> imgList = new ArrayList<>();
 
     //値の受け取り用
     private String home_food_name;
@@ -65,19 +60,56 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
 
         //表示
-        //GridView = (GridView)findViewById(R.id.food_grid);
+        //画像を用意
+        int[] images = {
+                R.drawable.apple
+        };
+
+        GridAdapter gridAdapter = new GridAdapter(Home.this, images);
+
+        GridView gridview = (GridView) findViewById(R.id.food_grid);
+        gridview.setNumColumns(2);
 
 
+        //登録から返ってきたときだけホームに表示されるように
+        if(home_food_name != null) {
+            gridview.setAdapter(gridAdapter);
+        }
+
+        //画像を選択したら詳細に遷移
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                details();
+            }
+        });
+
+
+    }
+
+    public void details(){
+
+        Intent food_details = new Intent(this, FoodDetails.class);
+
+        //FoodDetails.javaへの受け渡し用
+        food_details.putExtra("get_food_name", home_food_name);
+        food_details.putExtra("get_food_date", home_food_date);
+        food_details.putExtra("get_spinnerItems", home_spinnerItems);
+        food_details.putExtra("get_food_shop", home_food_shop);
+        food_details.putExtra("get_food_num", home_food_num);
+        food_details.putExtra("get_category", home_category);
+
+        startActivity(food_details);
     }
 
     @Override
     public void onClick(View v) {
         Intent food_register_menu = new Intent(this, RegisterFoodMenu.class);
         Intent food_details = new Intent(this, FoodDetails.class);
-        Intent food_search = new Intent(this, FoodSearch.class);
-        Intent food_sort = new Intent(this, FoodSearch.class);
-        Intent favorite = new Intent(this, Favorite.class);
-        Intent delete_mode = new Intent(this, DeleteMode.class);
+        //Intent food_search = new Intent(this, FoodSearch.class);
+        //Intent food_sort = new Intent(this, FoodSearch.class);
+        //Intent favorite = new Intent(this, Favorite.class);
+       // Intent delete_mode = new Intent(this, DeleteMode.class);
 
         Intent home = new Intent(this, Home.class);
         Intent mypage = new Intent(this, Account.class);
@@ -91,17 +123,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         } else if (v.getId() == R.id.delFood){ //削除モードボタン
             //startActivity(delete_mode);
-
-            //食品詳細用
-            //FoodDetails.javaへの受け渡し用
-            food_details.putExtra("get_food_name", home_food_name);
-            food_details.putExtra("get_food_date", home_food_date);
-            food_details.putExtra("get_spinnerItems", home_spinnerItems);
-            food_details.putExtra("get_food_shop", home_food_shop);
-            food_details.putExtra("get_food_num", home_food_num);
-            food_details.putExtra("get_category", home_category);
-
-            startActivity(food_details); //今は削除モードを押すと食品詳細が出るようになってる
 
 
             //ベルトの遷移
