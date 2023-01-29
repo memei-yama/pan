@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TimelineMain extends AppCompatActivity implements View.OnClickListener {
+    int button = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +50,38 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
                 new int[] {R.id.tl_name, R.id.tl_data, R.id.tl_num, R.id.food, R.id.tlimageView}
         ));
 
-
+        findViewById(R.id.homeButton).setOnClickListener(this);//ホーム
+        findViewById(R.id.mypageButton).setOnClickListener(this);//マイページ
+        findViewById(R.id.timelineButton).setOnClickListener(this);//タイムライン
+        findViewById(R.id.messageButton).setOnClickListener(this);//メッセージ
     }
 
     @Override
     public void onClick(View v) {
         Intent send = new Intent(this, TimelineSend.class);
         startActivity(send);
+
+        Intent home = new Intent(this, Home.class);
+        Intent mypage = new Intent(this, Account.class);
+        Intent timeline = new Intent(this, TimelineMain.class);
+        Intent talk = new Intent(this, TalkMain.class);
+        if (v.getId() == R.id.homeButton && button != 1) {
+            startActivity(home);
+            button = 1;
+
+        } else if (v.getId() == R.id.mypageButton && button != 2) {
+            startActivity(mypage);
+            button = 2;
+
+        } else if (v.getId() == R.id.timelineButton && button != 3) {
+            startActivity(timeline);
+            button = 3;
+
+        } else if (v.getId() == R.id.messageButton && button != 4) {
+            startActivity(talk);
+            button = 4;
+        }
     }
+
+
 }
