@@ -21,8 +21,11 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
     private EditText food_num;
     private ImageButton image;
 
+    int button = 3;
+
     ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(), result -> {
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
                     if(data != null) {
@@ -53,10 +56,24 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
 
         food_name = (EditText) findViewById(R.id.foodName1);
         food_num = (EditText) findViewById(R.id.foodNum1);
+        image = (ImageButton) findViewById(R.id.camera);
 
         findViewById(R.id.button31).setOnClickListener(this); //戻るボタン
         findViewById(R.id.button32).setOnClickListener(this); //投稿ボタン
-        findViewById(R.id.camera).setOnClickListener(this); //画像挿入ボタン
+
+        image.setOnClickListener(this); //画像挿入ボタン
+
+        /*
+        image.setOnClickListener( v -> {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            resultLauncher.launch(intent);
+        });
+         */
+
+        findViewById(R.id.homeButton).setOnClickListener(this);//ホーム
+        findViewById(R.id.mypageButton).setOnClickListener(this);//マイページ
+        findViewById(R.id.timelineButton).setOnClickListener(this);//タイムライン
+        findViewById(R.id.messageButton).setOnClickListener(this);//メッセージ
     }
 
 
@@ -64,9 +81,8 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(v.getId() == R.id.camera) {
-            resultLauncher.launch(intent);
-        }
+        if(v.getId() == R.id.camera) resultLauncher.launch(intent);
+
         Intent main = new Intent(this, TimelineMain.class);
         if (v.getId() == R.id.button32) {
             String get_food_name = food_name.getText().toString();
@@ -77,6 +93,27 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
 
         } else if (v.getId() == R.id.button31) {
             startActivity(main);
+        }
+
+        Intent home = new Intent(this, Home.class);
+        Intent mypage = new Intent(this, Account.class);
+        Intent timeline = new Intent(this, TimelineMain.class);
+        Intent talk = new Intent(this, TalkMain.class);
+        if (v.getId() == R.id.homeButton && button != 1) {
+            startActivity(home);
+            button = 1;
+
+        } else if (v.getId() == R.id.mypageButton && button != 2) {
+            startActivity(mypage);
+            button = 2;
+
+        } else if (v.getId() == R.id.timelineButton && button != 3) {
+            startActivity(timeline);
+            button = 3;
+
+        } else if (v.getId() == R.id.messageButton && button != 4) {
+            startActivity(talk);
+            button = 4;
         }
     }
 }
