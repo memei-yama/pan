@@ -61,6 +61,7 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button31).setOnClickListener(this); //戻るボタン
         findViewById(R.id.button32).setOnClickListener(this); //投稿ボタン
 
+        image = findViewById(R.id.camera);
         image.setOnClickListener(this); //画像挿入ボタン
 
         /*
