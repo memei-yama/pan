@@ -5,6 +5,7 @@ package com.example.foodmanagement;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,9 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timeline_main);
+
+        TimelineGet TL = new TimelineGet();
+        TL.execute();
 
         findViewById(R.id.button30).setOnClickListener(this); //新規投稿作成ボタン
 
@@ -46,8 +50,15 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
         ListView list = findViewById(R.id.timelineList);
         list.setAdapter(new TimelineAdapter(
                 this, listData, R.layout.list_tl,
-                new String[] {"tl_name", "tl_data", "tl_num", "food", "tlimageView"},
-                new int[] {R.id.tl_name, R.id.tl_data, R.id.tl_num, R.id.food, R.id.tlimageView}
+                new String[]{"tl_name", "tl_data", "tl_num", "food", "tlimageView"},
+                new int[]{R.id.tl_name, R.id.tl_data, R.id.tl_num, R.id.food, R.id.tlimageView},
+                new TimelineAdapter.ReactionClickListener() {
+                    @Override
+                    public void onReactionClick(ImageButton human) {
+                        Intent reaction = new Intent(getApplication(), TimelineReaction.class);
+                        startActivity(reaction);
+                    }
+                }
         ));
 
         findViewById(R.id.homeButton).setOnClickListener(this);//ホーム
