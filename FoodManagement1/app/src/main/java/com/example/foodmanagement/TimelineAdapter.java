@@ -1,6 +1,10 @@
 package com.example.foodmanagement;
 
+//import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +19,13 @@ import java.util.Map;
 
 public class TimelineAdapter extends SimpleAdapter {
 
+    interface ReactionClickListener {
+        public void onReactionClick(ImageButton human);
+    }
+
     private LayoutInflater inflater;
     private List<? extends Map<String, ?>> listData;
+    private ReactionClickListener reactionClickListener;
 
     public boolean good = false;
 
@@ -28,10 +37,11 @@ public class TimelineAdapter extends SimpleAdapter {
         ImageView image;
     }
 
-    public TimelineAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+    public TimelineAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to, ReactionClickListener reactionClickListener) {
         super(context, data, resource, from, to);
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.listData = data;
+        this.reactionClickListener = reactionClickListener;
     }
 
     @Override
@@ -85,6 +95,14 @@ public class TimelineAdapter extends SimpleAdapter {
                     good = false;
                     //データベースからユーザIDを削除
                 }
+            }
+        });
+        ImageButton human = (ImageButton) view.findViewById(R.id.humanButton);
+        human.setTag(position);
+        human.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                reactionClickListener.onReactionClick(human);
             }
         });
         return view;
