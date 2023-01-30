@@ -100,17 +100,37 @@
 
         <ImageView
             android:id="@+id/tlimageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/camera" />
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/heartButton"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="100dp"
+                android:backgroundTint="#ffffff"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/heart" />
+
+            <ImageButton
+                android:id="@+id/humanButton"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="#ffffff"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/human" />
+        </LinearLayout>
+
     </LinearLayout>
 
 
-    <ImageButton
-        android:id="@+id/heartButton"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/heart" />
 </LinearLayout>
