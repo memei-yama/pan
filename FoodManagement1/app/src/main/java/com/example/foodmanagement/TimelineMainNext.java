@@ -30,11 +30,11 @@ public class TimelineMainNext extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.button30).setOnClickListener(this); //新規投稿作成ボタン
 
         //仮データ
-        String[] names = {"しば", "おが", "なか", "とう"};
-        String[] datas = {"2023/2/1", "2023/1/30", "2023/1/29", "2023/2/23"};
-        String[] nums = {"1", "1", "5", "1"};
-        String[] foods = {"北海道チーズ蒸しケーキ いちご味", "玉ねぎ", "みかん", "もも"};
-        int[] images = {R.drawable.aetea, R.drawable.tl_onion, R.drawable.tl_orange, R.drawable.tl_peach};
+        String[] names = {"しば", "やま", "おが", "なか", "とう"};
+        String[] datas = {"2023/2/1", "2023/2/1", "2023/1/30", "2023/1/29", "2023/2/23"};
+        String[] nums = {"1", "2", "1", "5", "1"};
+        String[] foods = {"北海道チーズ蒸しケーキ いちご味", "りんご", "玉ねぎ", "みかん", "もも"};
+        int[] images = {R.drawable.cake, R.drawable.tl_apple, R.drawable.tl_onion, R.drawable.tl_orange, R.drawable.tl_peach};
         //仮データここまで
 
         ArrayList<Map<String, Object>> listData = new ArrayList<>();
