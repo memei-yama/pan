@@ -97,6 +97,7 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
         if(v.getId() == R.id.camera) resultLauncher.launch(intent);
 
         Intent main = new Intent(this, TimelineMain.class);
+        Intent next = new Intent(this, TimelineMainNext.class);
         if (v.getId() == R.id.button32) {
             /*
             String get_food_name = food_name.getText().toString();
@@ -106,7 +107,7 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
             TLPost.execute();
              */
 
-            startActivity(main);
+            startActivity(next);
 
         } else if (v.getId() == R.id.button31) {
             startActivity(main);

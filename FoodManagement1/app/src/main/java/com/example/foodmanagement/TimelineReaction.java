@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -14,21 +15,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TimelineReaction extends AppCompatActivity implements View.OnClickListener{
+public class TimelineReaction extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener{
     int button = 3;
-    
+
+    private static final String[] reaction = {"たくや", "やま", "おが", "なか"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timeline_reaction);
 
-        //仮データ
-        String[] names = {"ゆみ", "はなこ", "たくや", "まさお"};
-
         ArrayList<Map<String, Object>> listData = new ArrayList<>();
-        for (int i=0; i < names.length; i++) {
+        for (int i=0; i < reaction.length; i++) {
             Map<String, Object> item = new HashMap<>();
-            item.put("displayUser1", names[i]);
+            item.put("displayUser1", reaction[i]);
             listData.add(item);
         }
 
@@ -39,6 +39,8 @@ public class TimelineReaction extends AppCompatActivity implements View.OnClickL
                 new String[] {"displayUser1"},
                 new int[] {R.id.displayUser1}
         ));
+
+        list.setOnItemClickListener(this);
 
         findViewById(R.id.button50).setOnClickListener(this);
 
@@ -74,5 +76,13 @@ public class TimelineReaction extends AppCompatActivity implements View.OnClickL
             startActivity(talk);
             button = 4;
         }
+    }
+
+    //トーク画面に移動
+    @Override
+    public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+        Intent talk = new Intent(this.getApplicationContext(), TalkMain.class);
+        String selectedText = reaction[position];
+        startActivity(talk);
     }
 }
