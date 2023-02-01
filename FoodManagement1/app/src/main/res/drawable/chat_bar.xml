@@ -3,9 +3,6 @@
     android:shape="rectangle">
 
     <!-- 背景色 -->
-    <solid android:color="#505050" />
-
-    <!-- 角の丸み -->
-    <corners android:radius="6dp" />
+    <solid android:color="#26CA91" />
 
 </shape>
