@@ -5,9 +5,13 @@ package com.example.foodmanagement;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentOnAttachListener;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -16,13 +20,27 @@ import android.content.Intent; //画面遷移のライブラリ
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 public class TimelineSend extends AppCompatActivity implements View.OnClickListener {
     private EditText food_name;
     private EditText food_num;
     private ImageButton image;
+    private Bitmap bitmap;
+    private Uri getUri;
 
     int button = 3;
 
+    //カメラのアクティビティ
     ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -45,6 +63,7 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
                             }
                         }
                         image.setImageBitmap(bitmap);
+                        //Uri getUri = getUriFromBitmap(bitmap);
                     }
                 }
             });
@@ -64,13 +83,6 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
         image = findViewById(R.id.camera);
         image.setOnClickListener(this); //画像挿入ボタン
 
-        /*
-        image.setOnClickListener( v -> {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            resultLauncher.launch(intent);
-        });
-         */
-
         findViewById(R.id.homeButton).setOnClickListener(this);//ホーム
         findViewById(R.id.mypageButton).setOnClickListener(this);//マイページ
         findViewById(R.id.timelineButton).setOnClickListener(this);//タイムライン
@@ -86,9 +98,13 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
 
         Intent main = new Intent(this, TimelineMain.class);
         if (v.getId() == R.id.button32) {
+            /*
             String get_food_name = food_name.getText().toString();
-            String get_food_num_string = food_num.getText().toString();
-            int get_food_num = Integer.parseInt(get_food_num_string);
+            String get_food_num = food_num.getText().toString();
+
+            TimelineSend.TimelinePost TLPost = new TimelineSend.TimelinePost(food_name, food_num);
+            TLPost.execute();
+             */
 
             startActivity(main);
 
@@ -117,4 +133,89 @@ public class TimelineSend extends AppCompatActivity implements View.OnClickListe
             button = 4;
         }
     }
+
+    /* Bitmapを一時ファイルとして保存してUriを返す。
+    public Uri getUriFromBitmap(Bitmap bitmap)
+    {
+        File tmpFile = new File(getExternalCacheDir(),
+                String.valueOf(System.currentTimeMillis()) + ".png");
+
+        FileOutputStream fos = null;
+        try {
+            tmpFile.createNewFile();
+            fos = new FileOutputStream(tmpFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+        try {
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, tmpFile.getName());
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/png");
+        values.put(MediaStore.Images.Media.DATA,
+                tmpFile.getAbsolutePath());
+        Uri ImageUri = getContentResolver().insert(
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+        System.out.print(ImageUri.toString());
+        return ImageUri;
+    }
+     */
+
+    /*
+    /**データベース接続
+    public final class TimelinePost extends AsyncTask<String,String,String> {
+        private final String API_URL_PREFIX = "ec2-18-212-59-223.compute-1.amazonaws.com";
+        String get_food_name = food_name.getText().toString();
+        String get_food_num = food_num.getText().toString();
+        String get_image_uri = getUri.toString();
+
+        public TimelinePost(EditText food_name,EditText food_num) {
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            //final StringBuilder result = new StringBuilder();
+            Uri.Builder uriBuilder = new Uri.Builder();
+            uriBuilder.scheme("http");
+            uriBuilder.authority(API_URL_PREFIX);
+            uriBuilder.path("insertTimelineInfo.php");
+            final String uriStr = uriBuilder.build().toString();
+
+            RequestBody formBody = new FormBody.Builder()
+                    .add("user_id", "111")
+                    .add("food_name", get_food_name)
+                    .add("food_num", get_food_num)
+                    .add("image_link", get_image_uri)
+                    .build();
+
+            OkHttpClient client = new OkHttpClient();
+
+            Request request = new Request.Builder()
+                    .url(uriStr)
+                    .post(formBody)
+                    .build();
+
+            try {
+                Response response = client.newCall(request).execute();
+                return response.body().toString();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String str) {
+            Log.d("Debug", str);
+        }
+    }
+    */
 }
