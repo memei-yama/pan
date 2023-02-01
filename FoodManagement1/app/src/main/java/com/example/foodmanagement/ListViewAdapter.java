@@ -37,16 +37,18 @@ public class ListViewAdapter extends SimpleAdapter{
 
     private LayoutInflater inflater;
     private List<? extends Map<String, ?>> listData;
+    private String[] friend;
 
     // 各行が保持するデータ保持クラス
     public class ViewHolder {
         TextView text1;
     }
 
-    public ListViewAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+    public ListViewAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[]to) {
         super(context, data, resource, from, to);
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.listData = data;
+        this.friend = from;
     }
 
     @Override
@@ -69,8 +71,9 @@ public class ListViewAdapter extends SimpleAdapter{
             holder = (ViewHolder) view.getTag();
         }
 
-        String text1 = ((HashMap<?,?>) listData.get(position)).get("text1").toString();
-        holder.text1.setText(text1);
+        //String text1 = ((HashMap<?,?>) listData.get(position)).get("text1").toString();
+        //holder.text1.setText(text1);
+        holder.text1.setText(friend[position]);
 
         // セル上にあるボタンの処理
         //Button btn = (Button) view.findViewById(R.id.rowbutton);
@@ -83,5 +86,20 @@ public class ListViewAdapter extends SimpleAdapter{
            // }
         //});
         return view;
+    }
+
+    @Override
+    public int getCount() {
+        return friend.length;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
     }
 }
