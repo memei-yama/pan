@@ -22,14 +22,16 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timeline_main);
 
+        /*
         TimelineGet TL = new TimelineGet();
         TL.execute();
+         */
 
         findViewById(R.id.button30).setOnClickListener(this); //新規投稿作成ボタン
 
         //仮データ
-        String[] names = {"ゆみ", "はなこ", "たくや", "まさお"};
-        String[] datas = {"2023/1/14", "2023/1/16", "2023/1/30", "2023/2/3"};
+        String[] names = {"やま", "おが", "なか", "とう"};
+        String[] datas = {"2023/2/1", "2023/1/30", "2023/1/29", "2023/2/23"};
         String[] nums = {"2", "1", "5", "1"};
         String[] foods = {"りんご", "玉ねぎ", "みかん", "もも"};
         int[] images = {R.drawable.tl_apple, R.drawable.tl_onion, R.drawable.tl_orange, R.drawable.tl_peach};
@@ -75,7 +77,7 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
         Intent home = new Intent(this, Home.class);
         Intent mypage = new Intent(this, Account.class);
         Intent timeline = new Intent(this, TimelineMain.class);
-        Intent talk = new Intent(this, TalkMain.class);
+        Intent talk = new Intent(this, DisplayFamilyFriend.class);
         if (v.getId() == R.id.homeButton && button != 1) {
             startActivity(home);
             button = 1;
@@ -94,5 +96,55 @@ public class TimelineMain extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /*
+    public final class TimelineGet extends AsyncTask<Void,Void,Void> {
+        private final String API_URL_PREFIX = "ec2-18-212-59-223.compute-1.amazonaws.com";
 
+        @Override
+        protected Void doInBackground(Void... params) {
+            //final StringBuilder result = new StringBuilder();
+            Uri.Builder uriBuilder = new Uri.Builder();
+            uriBuilder.scheme("http");
+            uriBuilder.authority(API_URL_PREFIX);
+            uriBuilder.path("selectTimelineInfo.php");
+            final String uriStr = uriBuilder.build().toString();
+
+            OkHttpClient client = new OkHttpClient();
+
+            Request request = new Request.Builder()
+                    .url(uriStr)
+                    .get()
+                    .build();
+
+            try {
+                Response response = client.newCall(request).execute();
+                String jsonData = response.body().string();
+                try {
+                    JSONArray Jarray = new JSONArray(jsonData);
+                    //String tmpStr;
+                    for (int i = 0; i < Jarray.length(); i++) {
+                        JSONObject json = Jarray.getJSONObject(i);
+                        String foods = json.getString("food_name");
+                        String nums = json.getString("food_num");
+                        String datas = json.getString("send_post_date");
+                        //String ImageUri = json.getString("image_link");
+                        Bitmap images = MediaStore.Images.Media.getBitmap(getContentResolver(), Uri.parse(json.getString("image_link")));
+                        System.out.println(foods);
+                    }
+                    //return Jarray;
+                } catch (JSONException e) {
+                    Log.e("MyApp", "unexpected JSON exception", e);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String str) {
+            Log.d("Debug", str);
+        }
+    }
+    */
 }
